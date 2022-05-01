@@ -22,4 +22,4 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
-image_service_api.py
+embyapi/api/image_service_api.py
