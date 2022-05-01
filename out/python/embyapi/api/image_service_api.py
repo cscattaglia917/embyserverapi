@@ -6166,8 +6166,7 @@ class ImageServiceApi(object):
         if 'body' in params:
             body_params = params['body']
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/octet-stream'])  # noqa: E501
+        header_params['Content-Type'] = 'image/png'
 
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
@@ -6285,8 +6284,7 @@ class ImageServiceApi(object):
         if 'body' in params:
             body_params = params['body']
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/octet-stream'])  # noqa: E501
+        header_params['Content-Type'] = 'image/png'
 
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
@@ -6515,8 +6513,7 @@ class ImageServiceApi(object):
         if 'body' in params:
             body_params = params['body']
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/octet-stream'])  # noqa: E501
+        header_params['Content-Type'] = 'image/png'
 
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
@@ -6634,8 +6631,7 @@ class ImageServiceApi(object):
         if 'body' in params:
             body_params = params['body']
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/octet-stream'])  # noqa: E501
+        header_params['Content-Type'] = 'image/png'
 
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
