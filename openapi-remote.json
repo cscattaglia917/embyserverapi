@@ -1258,7 +1258,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -2319,7 +2319,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -3291,7 +3291,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -4190,7 +4190,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -5089,7 +5089,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -6037,7 +6037,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -6932,7 +6932,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -7992,7 +7992,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -9189,7 +9189,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -10084,7 +10084,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -11041,7 +11041,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -11926,7 +11926,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -12901,7 +12901,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -40408,6 +40408,17 @@
             }
           },
           {
+            "name": "MinIndexNumber",
+            "in": "query",
+            "description": "Optional filter by minimum index number.",
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          },
+          {
             "name": "SeasonId",
             "in": "query",
             "description": "Optional. Filter by season id",
@@ -42570,7 +42581,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",
@@ -51391,7 +51402,7 @@
             }
           },
           {
-			"name": "SearchTerm",
+			      "name": "SearchTerm",
             "in": "query",
             "description": "Enter a search term to perform a search request",
             "style": "form",

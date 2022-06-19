@@ -46,6 +46,7 @@ class TvShowsServiceApi(object):
         :param str id: The series id (required)
         :param str fields: Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls
         :param int season: Optional filter by season number.
+        :param int min_index_number: Optional filter by minimum index number.
         :param str season_id: Optional. Filter by season id
         :param bool is_missing: Optional filter by items that are missing episodes or not.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
@@ -83,6 +84,7 @@ class TvShowsServiceApi(object):
         :param str id: The series id (required)
         :param str fields: Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls
         :param int season: Optional filter by season number.
+        :param int min_index_number: Optional filter by minimum index number.
         :param str season_id: Optional. Filter by season id
         :param bool is_missing: Optional filter by items that are missing episodes or not.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
@@ -100,7 +102,7 @@ class TvShowsServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'id', 'fields', 'season', 'season_id', 'is_missing', 'adjacent_to', 'start_item_id', 'start_index', 'limit', 'enable_images', 'image_type_limit', 'enable_image_types', 'enable_user_data', 'sort_by', 'sort_order']  # noqa: E501
+        all_params = ['user_id', 'id', 'fields', 'season', 'min_index_number', 'season_id', 'is_missing', 'adjacent_to', 'start_item_id', 'start_index', 'limit', 'enable_images', 'image_type_limit', 'enable_image_types', 'enable_user_data', 'sort_by', 'sort_order']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -137,6 +139,8 @@ class TvShowsServiceApi(object):
             query_params.append(('Fields', params['fields']))  # noqa: E501
         if 'season' in params:
             query_params.append(('Season', params['season']))  # noqa: E501
+        if 'min_index_number' in params:
+            query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'season_id' in params:
             query_params.append(('SeasonId', params['season_id']))  # noqa: E501
         if 'is_missing' in params:

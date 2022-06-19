@@ -23,3 +23,4 @@
 #!docs/README.md
 
 embyapi/api/image_service_api.py
+embyapi/rest.py

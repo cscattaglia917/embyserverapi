@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_shows_upcoming**](TvShowsServiceApi.md#get_shows_upcoming) | **GET** /Shows/Upcoming | Gets a list of upcoming episodes
 
 # **get_shows_by_id_episodes**
-> QueryResultBaseItemDto get_shows_by_id_episodes(user_id, id, fields=fields, season=season, season_id=season_id, is_missing=is_missing, adjacent_to=adjacent_to, start_item_id=start_item_id, start_index=start_index, limit=limit, enable_images=enable_images, image_type_limit=image_type_limit, enable_image_types=enable_image_types, enable_user_data=enable_user_data, sort_by=sort_by, sort_order=sort_order)
+> QueryResultBaseItemDto get_shows_by_id_episodes(user_id, id, fields=fields, season=season, min_index_number=min_index_number, season_id=season_id, is_missing=is_missing, adjacent_to=adjacent_to, start_item_id=start_item_id, start_index=start_index, limit=limit, enable_images=enable_images, image_type_limit=image_type_limit, enable_image_types=enable_image_types, enable_user_data=enable_user_data, sort_by=sort_by, sort_order=sort_order)
 
 Gets episodes for a tv season
 
@@ -36,6 +36,7 @@ user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | The series id
 fields = 'fields_example' # str | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
 season = 56 # int | Optional filter by season number. (optional)
+min_index_number = 56 # int | Optional filter by minimum index number. (optional)
 season_id = 'season_id_example' # str | Optional. Filter by season id (optional)
 is_missing = true # bool | Optional filter by items that are missing episodes or not. (optional)
 adjacent_to = 'adjacent_to_example' # str | Optional. Return items that are siblings of a supplied item. (optional)
@@ -51,7 +52,7 @@ sort_order = 'sort_order_example' # str | Sort Order - Ascending,Descending (opt
 
 try:
     # Gets episodes for a tv season
-    api_response = api_instance.get_shows_by_id_episodes(user_id, id, fields=fields, season=season, season_id=season_id, is_missing=is_missing, adjacent_to=adjacent_to, start_item_id=start_item_id, start_index=start_index, limit=limit, enable_images=enable_images, image_type_limit=image_type_limit, enable_image_types=enable_image_types, enable_user_data=enable_user_data, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_shows_by_id_episodes(user_id, id, fields=fields, season=season, min_index_number=min_index_number, season_id=season_id, is_missing=is_missing, adjacent_to=adjacent_to, start_item_id=start_item_id, start_index=start_index, limit=limit, enable_images=enable_images, image_type_limit=image_type_limit, enable_image_types=enable_image_types, enable_user_data=enable_user_data, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TvShowsServiceApi->get_shows_by_id_episodes: %s\n" % e)
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
  **id** | **str**| The series id | 
  **fields** | **str**| Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls | [optional] 
  **season** | **int**| Optional filter by season number. | [optional] 
+ **min_index_number** | **int**| Optional filter by minimum index number. | [optional] 
  **season_id** | **str**| Optional. Filter by season id | [optional] 
  **is_missing** | **bool**| Optional filter by items that are missing episodes or not. | [optional] 
  **adjacent_to** | **str**| Optional. Return items that are siblings of a supplied item. | [optional] 
