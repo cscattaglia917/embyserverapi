@@ -73367,8 +73367,10 @@
             }
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "IsFolder": {
             "type": "boolean",
@@ -77736,8 +77738,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "MaxRecordingSeconds": {
             "type": "integer",
@@ -80596,8 +80600,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -80634,8 +80640,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "ProductionYear": {
             "type": "integer",
@@ -80722,8 +80730,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -80784,8 +80794,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -80859,8 +80871,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -80921,8 +80935,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -80983,8 +80999,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -81051,8 +81069,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -81113,8 +81133,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -81187,8 +81209,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -81252,8 +81276,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
@@ -81314,8 +81340,10 @@
             "type": "string"
           },
           "ProviderIds": {
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
           },
           "Year": {
             "type": "integer",
