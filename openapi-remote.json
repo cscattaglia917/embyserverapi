@@ -58449,9 +58449,9 @@
           }
         ],
         "requestBody": {
-          "description": "Binary stream",
+          "description": "PNG",
           "content": {
-            "application/octet-stream": {
+            "image/png": {
               "schema": {
                 "type": "string",
                 "format": "binary"
@@ -64824,9 +64824,9 @@
           }
         ],
         "requestBody": {
-          "description": "Binary stream",
+          "description": "PNG",
           "content": {
-            "application/octet-stream": {
+            "image/png": {
               "schema": {
                 "type": "string",
                 "format": "binary"
@@ -68076,9 +68076,9 @@
           }
         ],
         "requestBody": {
-          "description": "Binary stream",
+          "description": "PNG",
           "content": {
-            "application/octet-stream": {
+            "image/png": {
               "schema": {
                 "type": "string",
                 "format": "binary"
@@ -71039,9 +71039,9 @@
           }
         ],
         "requestBody": {
-          "description": "Binary stream",
+          "description": "PNG",
           "content": {
-            "application/octet-stream": {
+            "image/png": {
               "schema": {
                 "type": "string",
                 "format": "binary"
