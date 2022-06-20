@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_devices_info**](DeviceServiceApi.md#get_devices_info) | **GET** /Devices/Info | Gets info for a device
 [**get_devices_options**](DeviceServiceApi.md#get_devices_options) | **GET** /Devices/Options | Gets options for a device
 [**post_devices_camerauploads**](DeviceServiceApi.md#post_devices_camerauploads) | **POST** /Devices/CameraUploads | Uploads content
+[**post_devices_delete**](DeviceServiceApi.md#post_devices_delete) | **POST** /Devices/Delete | Deletes a device
 [**post_devices_options**](DeviceServiceApi.md#post_devices_options) | **POST** /Devices/Options | Updates device options
 
 # **delete_devices**
@@ -17,7 +18,7 @@ Method | HTTP request | Description
 
 Deletes a device
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -27,8 +28,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.DeviceServiceApi()
+api_instance = embyapi.DeviceServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Device Id
 
 try:
@@ -50,7 +57,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -332,8 +339,61 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_devices_delete**
+> post_devices_delete(id)
+
+Deletes a device
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.DeviceServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Device Id
+
+try:
+    # Deletes a device
+    api_instance.post_devices_delete(id)
+except ApiException as e:
+    print("Exception when calling DeviceServiceApi->post_devices_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Device Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_devices_options**
-> post_devices_options(body)
+> post_devices_options(body, id)
 
 Updates device options
 
@@ -356,10 +416,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.DeviceServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.DevicesDeviceOptions() # DevicesDeviceOptions | DeviceOptions: 
+id = 'id_example' # str | Device Id
 
 try:
     # Updates device options
-    api_instance.post_devices_options(body)
+    api_instance.post_devices_options(body, id)
 except ApiException as e:
     print("Exception when calling DeviceServiceApi->post_devices_options: %s\n" % e)
 ```
@@ -369,6 +430,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**DevicesDeviceOptions**](DevicesDeviceOptions.md)| DeviceOptions:  | 
+ **id** | **str**| Device Id | 
 
 ### Return type
 

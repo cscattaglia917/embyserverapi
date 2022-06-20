@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **progress** | **float** |  | [optional] 
 **date_created** | **datetime** |  | [optional] 
-**primary_image_item_id** | **int** |  | [optional] 
+**primary_image_item_id** | **str** |  | [optional] 
 **primary_image_tag** | **str** |  | [optional] 
 **temporary_path** | **str** |  | [optional] 
 **additional_files** | [**list[SyncModelItemFileInfo]**](SyncModelItemFileInfo.md) |  | [optional] 

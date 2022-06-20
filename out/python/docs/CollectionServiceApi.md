@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete_collections_by_id_items**](CollectionServiceApi.md#delete_collections_by_id_items) | **DELETE** /Collections/{Id}/Items | Removes items from a collection
 [**post_collections**](CollectionServiceApi.md#post_collections) | **POST** /Collections | Creates a new collection
 [**post_collections_by_id_items**](CollectionServiceApi.md#post_collections_by_id_items) | **POST** /Collections/{Id}/Items | Adds items to a collection
+[**post_collections_by_id_items_delete**](CollectionServiceApi.md#post_collections_by_id_items_delete) | **POST** /Collections/{Id}/Items/Delete | Removes items from a collection
 
 # **delete_collections_by_id_items**
 > delete_collections_by_id_items(ids, id)
@@ -154,6 +155,61 @@ try:
     api_instance.post_collections_by_id_items(ids, id)
 except ApiException as e:
     print("Exception when calling CollectionServiceApi->post_collections_by_id_items: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **str**| Item id, comma delimited | 
+ **id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_collections_by_id_items_delete**
+> post_collections_by_id_items_delete(ids, id)
+
+Removes items from a collection
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.CollectionServiceApi(embyapi.ApiClient(configuration))
+ids = 'ids_example' # str | Item id, comma delimited
+id = 'id_example' # str | 
+
+try:
+    # Removes items from a collection
+    api_instance.post_collections_by_id_items_delete(ids, id)
+except ApiException as e:
+    print("Exception when calling CollectionServiceApi->post_collections_by_id_items_delete: %s\n" % e)
 ```
 
 ### Parameters

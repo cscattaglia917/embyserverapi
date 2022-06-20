@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_connect_exchange**](ConnectServiceApi.md#get_connect_exchange) | **GET** /Connect/Exchange | Gets the corresponding local user from a connect user id
 [**get_connect_pending**](ConnectServiceApi.md#get_connect_pending) | **GET** /Connect/Pending | Creates a Connect link for a user
 [**post_users_by_id_connect_link**](ConnectServiceApi.md#post_users_by_id_connect_link) | **POST** /Users/{Id}/Connect/Link | Creates a Connect link for a user
+[**post_users_by_id_connect_link_delete**](ConnectServiceApi.md#post_users_by_id_connect_link_delete) | **POST** /Users/{Id}/Connect/Link/Delete | Removes a Connect link for a user
 
 # **delete_users_by_id_connect_link**
 > delete_users_by_id_connect_link(id)
@@ -218,6 +219,59 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_users_by_id_connect_link_delete**
+> post_users_by_id_connect_link_delete(id)
+
+Removes a Connect link for a user
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ConnectServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | User Id
+
+try:
+    # Removes a Connect link for a user
+    api_instance.post_users_by_id_connect_link_delete(id)
+except ApiException as e:
+    print("Exception when calling ConnectServiceApi->post_users_by_id_connect_link_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

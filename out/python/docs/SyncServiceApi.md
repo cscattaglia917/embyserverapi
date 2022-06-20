@@ -16,18 +16,21 @@ Method | HTTP request | Description
 [**get_sync_options**](SyncServiceApi.md#get_sync_options) | **GET** /Sync/Options | Gets a list of available sync targets.
 [**get_sync_targets**](SyncServiceApi.md#get_sync_targets) | **GET** /Sync/Targets | Gets a list of available sync targets.
 [**post_sync_by_itemid_status**](SyncServiceApi.md#post_sync_by_itemid_status) | **POST** /Sync/{ItemId}/Status | Gets sync status for an item.
+[**post_sync_by_targetid_items_delete**](SyncServiceApi.md#post_sync_by_targetid_items_delete) | **POST** /Sync/{TargetId}/Items/Delete | Cancels items from a sync target
 [**post_sync_data**](SyncServiceApi.md#post_sync_data) | **POST** /Sync/Data | Syncs data between device and server
 [**post_sync_items_cancel**](SyncServiceApi.md#post_sync_items_cancel) | **POST** /Sync/Items/Cancel | Cancels items from a sync target
+[**post_sync_jobitems_by_id_delete**](SyncServiceApi.md#post_sync_jobitems_by_id_delete) | **POST** /Sync/JobItems/{Id}/Delete | Cancels a sync job item
 [**post_sync_jobitems_by_id_enable**](SyncServiceApi.md#post_sync_jobitems_by_id_enable) | **POST** /Sync/JobItems/{Id}/Enable | Enables a cancelled or queued sync job item
 [**post_sync_jobitems_by_id_markforremoval**](SyncServiceApi.md#post_sync_jobitems_by_id_markforremoval) | **POST** /Sync/JobItems/{Id}/MarkForRemoval | Marks a job item for removal
 [**post_sync_jobitems_by_id_transferred**](SyncServiceApi.md#post_sync_jobitems_by_id_transferred) | **POST** /Sync/JobItems/{Id}/Transferred | Reports that a sync job item has successfully been transferred.
 [**post_sync_jobitems_by_id_unmarkforremoval**](SyncServiceApi.md#post_sync_jobitems_by_id_unmarkforremoval) | **POST** /Sync/JobItems/{Id}/UnmarkForRemoval | Unmarks a job item for removal
 [**post_sync_jobs**](SyncServiceApi.md#post_sync_jobs) | **POST** /Sync/Jobs | Gets sync jobs.
 [**post_sync_jobs_by_id**](SyncServiceApi.md#post_sync_jobs_by_id) | **POST** /Sync/Jobs/{Id} | Updates a sync job.
+[**post_sync_jobs_by_id_delete**](SyncServiceApi.md#post_sync_jobs_by_id_delete) | **POST** /Sync/Jobs/{Id}/Delete | Cancels a sync job.
 [**post_sync_offlineactions**](SyncServiceApi.md#post_sync_offlineactions) | **POST** /Sync/OfflineActions | Reports an action that occurred while offline.
 
 # **delete_sync_by_targetid_items**
-> delete_sync_by_targetid_items(target_id)
+> delete_sync_by_targetid_items(target_id, item_ids=item_ids)
 
 Cancels items from a sync target
 
@@ -50,10 +53,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.SyncServiceApi(embyapi.ApiClient(configuration))
 target_id = 'target_id_example' # str | TargetId
+item_ids = 'item_ids_example' # str | ItemIds (optional)
 
 try:
     # Cancels items from a sync target
-    api_instance.delete_sync_by_targetid_items(target_id)
+    api_instance.delete_sync_by_targetid_items(target_id, item_ids=item_ids)
 except ApiException as e:
     print("Exception when calling SyncServiceApi->delete_sync_by_targetid_items: %s\n" % e)
 ```
@@ -63,6 +67,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **target_id** | **str**| TargetId | 
+ **item_ids** | **str**| ItemIds | [optional] 
 
 ### Return type
 
@@ -672,6 +677,61 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_sync_by_targetid_items_delete**
+> post_sync_by_targetid_items_delete(target_id, item_ids=item_ids)
+
+Cancels items from a sync target
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SyncServiceApi(embyapi.ApiClient(configuration))
+target_id = 'target_id_example' # str | TargetId
+item_ids = 'item_ids_example' # str | ItemIds (optional)
+
+try:
+    # Cancels items from a sync target
+    api_instance.post_sync_by_targetid_items_delete(target_id, item_ids=item_ids)
+except ApiException as e:
+    print("Exception when calling SyncServiceApi->post_sync_by_targetid_items_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_id** | **str**| TargetId | 
+ **item_ids** | **str**| ItemIds | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_sync_data**
 > SyncModelSyncDataResponse post_sync_data(body)
 
@@ -763,6 +823,59 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **item_ids** | **str**| ItemIds | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_sync_jobitems_by_id_delete**
+> post_sync_jobitems_by_id_delete(id)
+
+Cancels a sync job item
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SyncServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Id
+
+try:
+    # Cancels a sync job item
+    api_instance.post_sync_jobitems_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling SyncServiceApi->post_sync_jobitems_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Id | 
 
 ### Return type
 
@@ -1096,6 +1209,59 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_sync_jobs_by_id_delete**
+> post_sync_jobs_by_id_delete(id)
+
+Cancels a sync job.
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SyncServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Id
+
+try:
+    # Cancels a sync job.
+    api_instance.post_sync_jobs_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling SyncServiceApi->post_sync_jobs_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

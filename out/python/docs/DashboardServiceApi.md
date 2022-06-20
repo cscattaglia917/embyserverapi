@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_web_configurationpage**](DashboardServiceApi.md#get_web_configurationpage) | **GET** /web/ConfigurationPage | 
 [**get_web_configurationpages**](DashboardServiceApi.md#get_web_configurationpages) | **GET** /web/ConfigurationPages | 
+[**get_web_strings**](DashboardServiceApi.md#get_web_strings) | **GET** /web/strings | 
 
 # **get_web_configurationpage**
 > get_web_configurationpage()
@@ -50,7 +51,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_web_configurationpages**
-> list[WebDashboardApiConfigurationPageInfo] get_web_configurationpages()
+> list[EmbyWebApiConfigurationPageInfo] get_web_configurationpages()
 
 
 
@@ -79,7 +80,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[WebDashboardApiConfigurationPageInfo]**](WebDashboardApiConfigurationPageInfo.md)
+[**list[EmbyWebApiConfigurationPageInfo]**](EmbyWebApiConfigurationPageInfo.md)
 
 ### Authorization
 
@@ -89,6 +90,48 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_web_strings**
+> get_web_strings()
+
+
+
+No authentication required
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = embyapi.DashboardServiceApi()
+
+try:
+    api_instance.get_web_strings()
+except ApiException as e:
+    print("Exception when calling DashboardServiceApi->get_web_strings: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

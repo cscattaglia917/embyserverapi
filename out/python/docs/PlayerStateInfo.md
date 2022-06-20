@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **media_source_id** | **str** |  | [optional] 
 **play_method** | **str** |  | [optional] 
 **repeat_mode** | **str** |  | [optional] 
+**subtitle_offset** | **int** |  | [optional] 
+**playback_rate** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

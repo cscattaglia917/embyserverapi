@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Gets an audio stream
 
-No authentication required
+Requires authentication as user
 
 ### Example
 ```python
@@ -24,8 +24,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.AudioServiceApi()
+api_instance = embyapi.AudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | Container
 device_profile_id = 'device_profile_id_example' # str | Optional. The dlna device profile id to utilize. (optional)
@@ -103,7 +109,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -117,7 +123,7 @@ No authorization required
 
 Gets an audio stream
 
-No authentication required
+Requires authentication as user
 
 ### Example
 ```python
@@ -127,8 +133,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.AudioServiceApi()
+api_instance = embyapi.AudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | Container
 device_profile_id = 'device_profile_id_example' # str | Optional. The dlna device profile id to utilize. (optional)
@@ -206,7 +218,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -220,7 +232,7 @@ No authorization required
 
 Gets an audio stream
 
-No authentication required
+Requires authentication as user
 
 ### Example
 ```python
@@ -230,8 +242,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.AudioServiceApi()
+api_instance = embyapi.AudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | Container
 device_profile_id = 'device_profile_id_example' # str | Optional. The dlna device profile id to utilize. (optional)
@@ -309,7 +327,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -323,7 +341,7 @@ No authorization required
 
 Gets an audio stream
 
-No authentication required
+Requires authentication as user
 
 ### Example
 ```python
@@ -333,8 +351,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.AudioServiceApi()
+api_instance = embyapi.AudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | Container
 device_profile_id = 'device_profile_id_example' # str | Optional. The dlna device profile id to utilize. (optional)
@@ -412,7 +436,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 

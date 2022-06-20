@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **download_count** | **int** |  | [optional] 
 **is_hash_match** | **bool** |  | [optional] 
 **is_forced** | **bool** |  | [optional] 
+**language** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **allow_empty** | **bool** |  | [optional] 
 **is_read_only** | **bool** |  | [optional] 
+**is_advanced** | **bool** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **parent_id** | **str** |  | [optional] 

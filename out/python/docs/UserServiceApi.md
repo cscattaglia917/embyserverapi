@@ -5,16 +5,20 @@ All URIs are relative to *https://home.ourflix.de:32865/emby*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_users_by_id**](UserServiceApi.md#delete_users_by_id) | **DELETE** /Users/{Id} | Deletes a user
-[**get_users**](UserServiceApi.md#get_users) | **GET** /Users | Gets a list of users
+[**delete_users_by_id_trackselections_by_tracktype**](UserServiceApi.md#delete_users_by_id_trackselections_by_tracktype) | **DELETE** /Users/{Id}/TrackSelections/{TrackType} | Clears audio or subtitle track selections for a user
 [**get_users_by_id**](UserServiceApi.md#get_users_by_id) | **GET** /Users/{Id} | Gets a user by Id
+[**get_users_prefixes**](UserServiceApi.md#get_users_prefixes) | **GET** /Users/Prefixes | Gets a list of users
 [**get_users_public**](UserServiceApi.md#get_users_public) | **GET** /Users/Public | Gets a list of publicly visible users for display on a login screen.
+[**get_users_query**](UserServiceApi.md#get_users_query) | **GET** /Users/Query | Gets a list of users
 [**post_users_authenticatebyname**](UserServiceApi.md#post_users_authenticatebyname) | **POST** /Users/AuthenticateByName | Authenticates a user
 [**post_users_by_id**](UserServiceApi.md#post_users_by_id) | **POST** /Users/{Id} | Updates a user
 [**post_users_by_id_authenticate**](UserServiceApi.md#post_users_by_id_authenticate) | **POST** /Users/{Id}/Authenticate | Authenticates a user
 [**post_users_by_id_configuration**](UserServiceApi.md#post_users_by_id_configuration) | **POST** /Users/{Id}/Configuration | Updates a user configuration
+[**post_users_by_id_delete**](UserServiceApi.md#post_users_by_id_delete) | **POST** /Users/{Id}/Delete | Deletes a user
 [**post_users_by_id_easypassword**](UserServiceApi.md#post_users_by_id_easypassword) | **POST** /Users/{Id}/EasyPassword | Updates a user&#x27;s easy password
 [**post_users_by_id_password**](UserServiceApi.md#post_users_by_id_password) | **POST** /Users/{Id}/Password | Updates a user&#x27;s password
 [**post_users_by_id_policy**](UserServiceApi.md#post_users_by_id_policy) | **POST** /Users/{Id}/Policy | Updates a user policy
+[**post_users_by_id_trackselections_by_tracktype_delete**](UserServiceApi.md#post_users_by_id_trackselections_by_tracktype_delete) | **POST** /Users/{Id}/TrackSelections/{TrackType}/Delete | Clears audio or subtitle track selections for a user
 [**post_users_forgotpassword**](UserServiceApi.md#post_users_forgotpassword) | **POST** /Users/ForgotPassword | Initiates the forgot password process for a local user
 [**post_users_forgotpassword_pin**](UserServiceApi.md#post_users_forgotpassword_pin) | **POST** /Users/ForgotPassword/Pin | Redeems a forgot password pin
 [**post_users_new**](UserServiceApi.md#post_users_new) | **POST** /Users/New | Creates a user
@@ -72,12 +76,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_users**
-> list[UserDto] get_users(is_hidden=is_hidden, is_disabled=is_disabled)
+# **delete_users_by_id_trackselections_by_tracktype**
+> delete_users_by_id_trackselections_by_tracktype(id, track_type)
 
-Gets a list of users
+Clears audio or subtitle track selections for a user
 
-Requires authentication as user
+No authentication required
 
 ### Example
 ```python
@@ -87,44 +91,37 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikeyauth
-configuration = embyapi.Configuration()
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = embyapi.UserServiceApi(embyapi.ApiClient(configuration))
-is_hidden = true # bool | Optional filter by IsHidden=true or false (optional)
-is_disabled = true # bool | Optional filter by IsDisabled=true or false (optional)
+api_instance = embyapi.UserServiceApi()
+id = 'id_example' # str | 
+track_type = 'track_type_example' # str | 
 
 try:
-    # Gets a list of users
-    api_response = api_instance.get_users(is_hidden=is_hidden, is_disabled=is_disabled)
-    pprint(api_response)
+    # Clears audio or subtitle track selections for a user
+    api_instance.delete_users_by_id_trackselections_by_tracktype(id, track_type)
 except ApiException as e:
-    print("Exception when calling UserServiceApi->get_users: %s\n" % e)
+    print("Exception when calling UserServiceApi->delete_users_by_id_trackselections_by_tracktype: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_hidden** | **bool**| Optional filter by IsHidden&#x3D;true or false | [optional] 
- **is_disabled** | **bool**| Optional filter by IsDisabled&#x3D;true or false | [optional] 
+ **id** | **str**|  | 
+ **track_type** | **str**|  | 
 
 ### Return type
 
-[**list[UserDto]**](UserDto.md)
+void (empty response body)
 
 ### Authorization
 
-[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -182,6 +179,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_users_prefixes**
+> list[NameIdPair] get_users_prefixes(is_hidden=is_hidden, is_disabled=is_disabled, start_index=start_index, limit=limit, name_starts_with_or_greater=name_starts_with_or_greater)
+
+Gets a list of users
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserServiceApi(embyapi.ApiClient(configuration))
+is_hidden = true # bool | Optional filter by IsHidden=true or false (optional)
+is_disabled = true # bool | Optional filter by IsDisabled=true or false (optional)
+start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+limit = 56 # int | Optional. The maximum number of records to return (optional)
+name_starts_with_or_greater = 'name_starts_with_or_greater_example' # str | Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+
+try:
+    # Gets a list of users
+    api_response = api_instance.get_users_prefixes(is_hidden=is_hidden, is_disabled=is_disabled, start_index=start_index, limit=limit, name_starts_with_or_greater=name_starts_with_or_greater)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserServiceApi->get_users_prefixes: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_hidden** | **bool**| Optional filter by IsHidden&#x3D;true or false | [optional] 
+ **is_disabled** | **bool**| Optional filter by IsDisabled&#x3D;true or false | [optional] 
+ **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
+ **limit** | **int**| Optional. The maximum number of records to return | [optional] 
+ **name_starts_with_or_greater** | **str**| Optional filter by items whose name is sorted equally or greater than a given input string. | [optional] 
+
+### Return type
+
+[**list[NameIdPair]**](NameIdPair.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_users_public**
 > list[UserDto] get_users_public()
 
@@ -218,6 +277,68 @@ This endpoint does not need any parameter.
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_users_query**
+> QueryResultUserDto get_users_query(is_hidden=is_hidden, is_disabled=is_disabled, start_index=start_index, limit=limit, name_starts_with_or_greater=name_starts_with_or_greater)
+
+Gets a list of users
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserServiceApi(embyapi.ApiClient(configuration))
+is_hidden = true # bool | Optional filter by IsHidden=true or false (optional)
+is_disabled = true # bool | Optional filter by IsDisabled=true or false (optional)
+start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+limit = 56 # int | Optional. The maximum number of records to return (optional)
+name_starts_with_or_greater = 'name_starts_with_or_greater_example' # str | Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+
+try:
+    # Gets a list of users
+    api_response = api_instance.get_users_query(is_hidden=is_hidden, is_disabled=is_disabled, start_index=start_index, limit=limit, name_starts_with_or_greater=name_starts_with_or_greater)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserServiceApi->get_users_query: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_hidden** | **bool**| Optional filter by IsHidden&#x3D;true or false | [optional] 
+ **is_disabled** | **bool**| Optional filter by IsDisabled&#x3D;true or false | [optional] 
+ **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
+ **limit** | **int**| Optional. The maximum number of records to return | [optional] 
+ **name_starts_with_or_greater** | **str**| Optional filter by items whose name is sorted equally or greater than a given input string. | [optional] 
+
+### Return type
+
+[**QueryResultUserDto**](QueryResultUserDto.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -436,6 +557,59 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_users_by_id_delete**
+> post_users_by_id_delete(id)
+
+Deletes a user
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Deletes a user
+    api_instance.post_users_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling UserServiceApi->post_users_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_users_by_id_easypassword**
 > post_users_by_id_easypassword(body, id)
 
@@ -597,6 +771,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_users_by_id_trackselections_by_tracktype_delete**
+> post_users_by_id_trackselections_by_tracktype_delete(id, track_type)
+
+Clears audio or subtitle track selections for a user
+
+No authentication required
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = embyapi.UserServiceApi()
+id = 'id_example' # str | 
+track_type = 'track_type_example' # str | 
+
+try:
+    # Clears audio or subtitle track selections for a user
+    api_instance.post_users_by_id_trackselections_by_tracktype_delete(id, track_type)
+except ApiException as e:
+    print("Exception when calling UserServiceApi->post_users_by_id_trackselections_by_tracktype_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **track_type** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

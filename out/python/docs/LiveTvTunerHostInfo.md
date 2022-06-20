@@ -8,11 +8,15 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] 
 **device_id** | **str** |  | [optional] 
 **friendly_name** | **str** |  | [optional] 
+**setup_url** | **str** |  | [optional] 
 **import_favorites_only** | **bool** |  | [optional] 
 **allow_hw_transcoding** | **bool** |  | [optional] 
 **source** | **str** |  | [optional] 
 **tuner_count** | **int** |  | [optional] 
 **user_agent** | **str** |  | [optional] 
+**referrer** | **str** |  | [optional] 
+**provider_options** | **str** |  | [optional] 
+**data_version** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

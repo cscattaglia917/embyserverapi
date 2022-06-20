@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **community_rating** | **float** |  | [optional] 
 **vote_count** | **int** |  | [optional] 
 **language** | **str** |  | [optional] 
+**display_language** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **rating_type** | **str** |  | [optional] 
 

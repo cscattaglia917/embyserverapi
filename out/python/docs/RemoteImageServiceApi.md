@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Gets a remote image
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -24,8 +24,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.RemoteImageServiceApi()
+api_instance = embyapi.RemoteImageServiceApi(embyapi.ApiClient(configuration))
 image_url = 'image_url_example' # str | The image url
 
 try:
@@ -47,7 +53,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 

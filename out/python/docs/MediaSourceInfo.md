@@ -12,8 +12,10 @@ Name | Type | Description | Notes
 **container** | **str** |  | [optional] 
 **size** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
+**sort_name** | **str** |  | [optional] 
 **is_remote** | **bool** |  | [optional] 
 **run_time_ticks** | **int** |  | [optional] 
+**container_start_time_ticks** | **int** |  | [optional] 
 **supports_transcoding** | **bool** |  | [optional] 
 **supports_direct_stream** | **bool** |  | [optional] 
 **supports_direct_play** | **bool** |  | [optional] 
@@ -31,6 +33,7 @@ Name | Type | Description | Notes
 **bitrate** | **int** |  | [optional] 
 **timestamp** | **str** |  | [optional] 
 **required_http_headers** | **dict(str, str)** |  | [optional] 
+**direct_stream_url** | **str** |  | [optional] 
 **transcoding_url** | **str** |  | [optional] 
 **transcoding_sub_protocol** | **str** |  | [optional] 
 **transcoding_container** | **str** |  | [optional] 
@@ -38,6 +41,8 @@ Name | Type | Description | Notes
 **read_at_native_framerate** | **bool** |  | [optional] 
 **default_audio_stream_index** | **int** |  | [optional] 
 **default_subtitle_stream_index** | **int** |  | [optional] 
+**item_id** | **str** |  | [optional] 
+**server_id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

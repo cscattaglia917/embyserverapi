@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **now_playing_queue** | [**list[QueueItem]**](QueueItem.md) |  | [optional] 
 **playlist_item_id** | **str** |  | [optional] 
+**playlist_index** | **int** |  | [optional] 
+**playlist_length** | **int** |  | [optional] 
 **item** | [**BaseItemDto**](BaseItemDto.md) |  | [optional] 
 **item_id** | **str** |  | [optional] 
 **session_id** | **str** |  | [optional] 

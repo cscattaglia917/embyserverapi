@@ -4,10 +4,11 @@ All URIs are relative to *https://home.ourflix.de:32865/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer**](VideoHlsServiceApi.md#get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer) | **GET** /Videos/{Id}/hls/{PlaylistId}/{SegmentId}.{SegmentContainer} | 
 [**get_videos_by_id_live_m3u8**](VideoHlsServiceApi.md#get_videos_by_id_live_m3u8) | **GET** /Videos/{Id}/live.m3u8 | 
 
-# **get_videos_by_id_live_m3u8**
-> get_videos_by_id_live_m3u8(id, container, device_profile_id=device_profile_id, device_id=device_id, audio_codec=audio_codec, enable_auto_stream_copy=enable_auto_stream_copy, audio_sample_rate=audio_sample_rate, audio_bit_rate=audio_bit_rate, audio_channels=audio_channels, max_audio_channels=max_audio_channels, static=static, profile=profile, level=level, framerate=framerate, max_framerate=max_framerate, copy_timestamps=copy_timestamps, start_time_ticks=start_time_ticks, width=width, height=height, max_width=max_width, max_height=max_height, video_bit_rate=video_bit_rate, subtitle_stream_index=subtitle_stream_index, subtitle_method=subtitle_method, max_ref_frames=max_ref_frames, max_video_bit_depth=max_video_bit_depth, video_codec=video_codec, audio_stream_index=audio_stream_index, video_stream_index=video_stream_index)
+# **get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer**
+> get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer(segment_container, segment_id, id, playlist_id)
 
 
 
@@ -23,6 +24,64 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = embyapi.VideoHlsServiceApi()
+segment_container = 'segment_container_example' # str | 
+segment_id = 'segment_id_example' # str | 
+id = 'id_example' # str | 
+playlist_id = 'playlist_id_example' # str | 
+
+try:
+    api_instance.get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer(segment_container, segment_id, id, playlist_id)
+except ApiException as e:
+    print("Exception when calling VideoHlsServiceApi->get_videos_by_id_hls_by_playlistid_by_segmentid_by_segmentcontainer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **segment_container** | **str**|  | 
+ **segment_id** | **str**|  | 
+ **id** | **str**|  | 
+ **playlist_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_videos_by_id_live_m3u8**
+> get_videos_by_id_live_m3u8(id, container, device_profile_id=device_profile_id, device_id=device_id, audio_codec=audio_codec, enable_auto_stream_copy=enable_auto_stream_copy, audio_sample_rate=audio_sample_rate, audio_bit_rate=audio_bit_rate, audio_channels=audio_channels, max_audio_channels=max_audio_channels, static=static, profile=profile, level=level, framerate=framerate, max_framerate=max_framerate, copy_timestamps=copy_timestamps, start_time_ticks=start_time_ticks, width=width, height=height, max_width=max_width, max_height=max_height, video_bit_rate=video_bit_rate, subtitle_stream_index=subtitle_stream_index, subtitle_method=subtitle_method, max_ref_frames=max_ref_frames, max_video_bit_depth=max_video_bit_depth, video_codec=video_codec, audio_stream_index=audio_stream_index, video_stream_index=video_stream_index)
+
+
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.VideoHlsServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | Container
 device_profile_id = 'device_profile_id_example' # str | Optional. The dlna device profile id to utilize. (optional)
@@ -99,7 +158,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_scheduledtasks_by_id**](ScheduledTaskServiceApi.md#get_scheduledtasks_by_id) | **GET** /ScheduledTasks/{Id} | Gets a scheduled task, by Id
 [**post_scheduledtasks_by_id_triggers**](ScheduledTaskServiceApi.md#post_scheduledtasks_by_id_triggers) | **POST** /ScheduledTasks/{Id}/Triggers | Updates the triggers for a scheduled task
 [**post_scheduledtasks_running_by_id**](ScheduledTaskServiceApi.md#post_scheduledtasks_running_by_id) | **POST** /ScheduledTasks/Running/{Id} | Starts a scheduled task
+[**post_scheduledtasks_running_by_id_delete**](ScheduledTaskServiceApi.md#post_scheduledtasks_running_by_id_delete) | **POST** /ScheduledTasks/Running/{Id}/Delete | Stops a scheduled task
 
 # **delete_scheduledtasks_running_by_id**
 > delete_scheduledtasks_running_by_id(id)
@@ -258,6 +259,59 @@ try:
     api_instance.post_scheduledtasks_running_by_id(id)
 except ApiException as e:
     print("Exception when calling ScheduledTaskServiceApi->post_scheduledtasks_running_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_scheduledtasks_running_by_id_delete**
+> post_scheduledtasks_running_by_id_delete(id)
+
+Stops a scheduled task
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ScheduledTaskServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Stops a scheduled task
+    api_instance.post_scheduledtasks_running_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling ScheduledTaskServiceApi->post_scheduledtasks_running_by_id_delete: %s\n" % e)
 ```
 
 ### Parameters

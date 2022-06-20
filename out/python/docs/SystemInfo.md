@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 **package_name** | **str** |  | [optional] 
 **has_pending_restart** | **bool** |  | [optional] 
 **is_shutting_down** | **bool** |  | [optional] 
+**operating_system** | **str** |  | [optional] 
 **supports_library_monitor** | **bool** |  | [optional] 
+**supports_local_port_configuration** | **bool** |  | [optional] 
+**supports_wake_server** | **bool** |  | [optional] 
 **web_socket_port_number** | **int** |  | [optional] 
 **completed_installations** | [**list[UpdatesInstallationInfo]**](UpdatesInstallationInfo.md) |  | [optional] 
 **can_self_restart** | **bool** |  | [optional] 
@@ -27,10 +30,11 @@ Name | Type | Description | Notes
 **supports_auto_run_at_startup** | **bool** |  | [optional] 
 **hardware_acceleration_requires_premiere** | **bool** |  | [optional] 
 **local_address** | **str** |  | [optional] 
+**local_addresses** | **list[str]** |  | [optional] 
 **wan_address** | **str** |  | [optional] 
+**remote_addresses** | **list[str]** |  | [optional] 
 **server_name** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
-**operating_system** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

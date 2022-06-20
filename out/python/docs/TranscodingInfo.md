@@ -5,10 +5,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audio_codec** | **str** |  | [optional] 
 **video_codec** | **str** |  | [optional] 
+**sub_protocol** | **str** |  | [optional] 
 **container** | **str** |  | [optional] 
 **is_video_direct** | **bool** |  | [optional] 
 **is_audio_direct** | **bool** |  | [optional] 
 **bitrate** | **int** |  | [optional] 
+**audio_bitrate** | **int** |  | [optional] 
+**video_bitrate** | **int** |  | [optional] 
 **framerate** | **float** |  | [optional] 
 **completion_percentage** | **float** |  | [optional] 
 **transcoding_position_ticks** | **float** |  | [optional] 
@@ -29,6 +32,8 @@ Name | Type | Description | Notes
 **video_encoder_is_hardware** | **bool** |  | [optional] 
 **video_encoder_media_type** | **str** |  | [optional] 
 **video_encoder_hw_accel** | **str** |  | [optional] 
+**video_pipeline_info** | **list[object]** |  | [optional] 
+**subtitle_pipeline_infos** | **list[list[object]]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

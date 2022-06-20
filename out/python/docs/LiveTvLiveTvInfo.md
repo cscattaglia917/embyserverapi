@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**services** | [**list[LiveTvLiveTvServiceInfo]**](LiveTvLiveTvServiceInfo.md) |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **enabled_users** | **list[str]** |  | [optional] 
 

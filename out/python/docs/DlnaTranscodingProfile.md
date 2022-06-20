@@ -17,7 +17,9 @@ Name | Type | Description | Notes
 **min_segments** | **int** |  | [optional] 
 **segment_length** | **int** |  | [optional] 
 **break_on_non_key_frames** | **bool** |  | [optional] 
+**allow_interlaced_video_stream_copy** | **bool** |  | [optional] 
 **manifest_subtitles** | **str** |  | [optional] 
+**max_manifest_subtitles** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

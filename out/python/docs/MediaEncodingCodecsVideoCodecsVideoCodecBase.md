@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**codec_device_info** | [**MediaEncodingCodecsCommonInterfacesICodecDeviceInfo**](MediaEncodingCodecsCommonInterfacesICodecDeviceInfo.md) |  | [optional] 
 **codec_kind** | **str** |  | [optional] 
 **media_type_name** | **str** |  | [optional] 
 **video_media_type** | **str** |  | [optional] 
@@ -12,11 +13,10 @@ Name | Type | Description | Notes
 **max_height** | **int** |  | [optional] 
 **width_alignment** | **int** |  | [optional] 
 **height_alignment** | **int** |  | [optional] 
-**min_frame_rate** | **int** |  | [optional] 
-**max_frame_rate** | **int** |  | [optional] 
+**max_bit_rate** | [**EmbyMediaModelTypesBitRate**](EmbyMediaModelTypesBitRate.md) |  | [optional] 
 **supported_color_formats** | **list[str]** |  | [optional] 
 **supported_color_format_strings** | **list[str]** |  | [optional] 
-**profile_and_level_information** | [**list[MediaEncodingCodecsCommonTypesProfileLevelInformation]**](MediaEncodingCodecsCommonTypesProfileLevelInformation.md) |  | [optional] 
+**profile_and_level_information** | [**list[EmbyMediaModelTypesProfileLevelInformation]**](EmbyMediaModelTypesProfileLevelInformation.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **direction** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
@@ -26,8 +26,6 @@ Name | Type | Description | Notes
 **secondary_framework** | **str** |  | [optional] 
 **secondary_framework_codec** | **str** |  | [optional] 
 **max_instance_count** | **int** |  | [optional] 
-**min_bit_rate** | [**MediaEncodingCodecsCommonTypesBitRate**](MediaEncodingCodecsCommonTypesBitRate.md) |  | [optional] 
-**max_bit_rate** | [**MediaEncodingCodecsCommonTypesBitRate**](MediaEncodingCodecsCommonTypesBitRate.md) |  | [optional] 
 **is_enabled_by_default** | **bool** |  | [optional] 
 **default_priority** | **int** |  | [optional] 
 

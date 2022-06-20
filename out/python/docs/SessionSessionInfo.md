@@ -5,10 +5,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **play_state** | [**PlayerStateInfo**](PlayerStateInfo.md) |  | [optional] 
 **additional_users** | [**list[SessionUserInfo]**](SessionUserInfo.md) |  | [optional] 
-**capabilities** | [**ClientCapabilities**](ClientCapabilities.md) |  | [optional] 
-**remote_end_point** | **str** |  | [optional] 
+**remote_end_point** | [**NetIPAddress**](NetIPAddress.md) |  | [optional] 
 **playable_media_types** | **list[str]** |  | [optional] 
 **playlist_item_id** | **str** |  | [optional] 
+**playlist_index** | **int** |  | [optional] 
+**playlist_length** | **int** |  | [optional] 
 **id** | **str** |  | [optional] 
 **server_id** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 

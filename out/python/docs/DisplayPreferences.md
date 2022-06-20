@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **show_backdrop** | **bool** |  | [optional] 
 **remember_sorting** | **bool** |  | [optional] 
 **sort_order** | **str** |  | [optional] 
-**show_sidebar** | **bool** |  | [optional] 
 **client** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

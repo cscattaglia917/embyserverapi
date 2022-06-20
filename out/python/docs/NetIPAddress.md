@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **is_i_pv6_link_local** | **bool** |  | [optional] 
 **is_i_pv6_site_local** | **bool** |  | [optional] 
 **is_i_pv6_teredo** | **bool** |  | [optional] 
+**is_i_pv6_unique_local** | **bool** |  | [optional] 
 **is_i_pv4_mapped_to_i_pv6** | **bool** |  | [optional] 
 **address** | **int** |  | [optional] 
 
