@@ -1,6 +1,6 @@
 # embyapi.VideoServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://192.168.1.6:8096/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
@@ -157,7 +157,7 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
@@ -266,7 +266,7 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
@@ -375,7 +375,7 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 

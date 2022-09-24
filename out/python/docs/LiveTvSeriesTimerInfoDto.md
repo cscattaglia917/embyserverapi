@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **parent_primary_image_item_id** | **str** |  | [optional] 
 **parent_primary_image_tag** | **str** |  | [optional] 
 **series_id** | **str** |  | [optional] 
+**keywords** | [**list[LiveTvKeywordInfo]**](LiveTvKeywordInfo.md) |  | [optional] 
 **timer_type** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 

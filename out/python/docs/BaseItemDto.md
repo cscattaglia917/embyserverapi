@@ -46,6 +46,8 @@ Name | Type | Description | Notes
 **genres** | **list[str]** |  | [optional] 
 **community_rating** | **float** |  | [optional] 
 **run_time_ticks** | **int** |  | [optional] 
+**size** | **int** |  | [optional] 
+**file_name** | **str** |  | [optional] 
 **bitrate** | **int** |  | [optional] 
 **play_access** | **str** |  | [optional] 
 **production_year** | **int** |  | [optional] 

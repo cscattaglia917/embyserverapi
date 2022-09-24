@@ -1,6 +1,6 @@
 # embyapi.UniversalAudioServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://192.168.1.6:8096/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ api_instance = embyapi.UniversalAudioServiceApi(embyapi.ApiClient(configuration)
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | 
 device_id = 'device_id_example' # str | The device id of the client requesting. Used to stop encoding processes when needed. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 
 try:
     # Gets an audio stream
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **container** | **str**|  | 
  **device_id** | **str**| The device id of the client requesting. Used to stop encoding processes when needed. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
 
 ### Return type
 
@@ -93,7 +93,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.UniversalAudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 device_id = 'device_id_example' # str | The device id of the client requesting. Used to stop encoding processes when needed. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 
 try:
     # Gets an audio stream
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
  **device_id** | **str**| The device id of the client requesting. Used to stop encoding processes when needed. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
 
 ### Return type
 
@@ -151,7 +151,7 @@ api_instance = embyapi.UniversalAudioServiceApi(embyapi.ApiClient(configuration)
 id = 'id_example' # str | Item Id
 container = 'container_example' # str | 
 device_id = 'device_id_example' # str | The device id of the client requesting. Used to stop encoding processes when needed. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 
 try:
     # Gets an audio stream
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **container** | **str**|  | 
  **device_id** | **str**| The device id of the client requesting. Used to stop encoding processes when needed. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
 
 ### Return type
 
@@ -209,7 +209,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.UniversalAudioServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 device_id = 'device_id_example' # str | The device id of the client requesting. Used to stop encoding processes when needed. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
 
 try:
     # Gets an audio stream
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
  **device_id** | **str**| The device id of the client requesting. Used to stop encoding processes when needed. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
 
 ### Return type
 

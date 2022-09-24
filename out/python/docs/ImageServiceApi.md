@@ -1,6 +1,6 @@
 # embyapi.ImageServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://192.168.1.6:8096/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -3075,7 +3075,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.Object() # Object | PNG
+body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
 type = 'type_example' # str | Image Type
 index = 56 # int | Image Index (optional)
@@ -3091,7 +3091,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| PNG | 
+ **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
  **type** | **str**| Image Type | 
  **index** | **int**| Image Index | [optional] 
@@ -3106,7 +3106,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: image/png
+ - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3134,7 +3134,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.Object() # Object | PNG
+body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
 type = 'type_example' # str | Image Type
 index = 56 # int | Image Index
@@ -3150,7 +3150,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| PNG | 
+ **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
  **type** | **str**| Image Type | 
  **index** | **int**| Image Index | 
@@ -3165,7 +3165,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: image/png
+ - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3423,7 +3423,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.Object() # Object | PNG
+body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
 type = 'type_example' # str | Image Type
 index = 56 # int | Image Index (optional)
@@ -3439,7 +3439,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| PNG | 
+ **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
  **type** | **str**| Image Type | 
  **index** | **int**| Image Index | [optional] 
@@ -3454,7 +3454,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: image/png
+ - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3482,7 +3482,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.Object() # Object | PNG
+body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
 type = 'type_example' # str | Image Type
 index = 56 # int | Image Index
@@ -3498,7 +3498,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| PNG | 
+ **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
  **type** | **str**| Image Type | 
  **index** | **int**| Image Index | 
@@ -3513,7 +3513,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: image/png
+ - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

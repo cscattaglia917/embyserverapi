@@ -55,7 +55,6 @@ Name | Type | Description | Notes
 **forced_sort_name_upgraded** | **bool** |  | [optional] 
 **inherited_parental_rating_value_upgraded** | **bool** |  | [optional] 
 **enable_people_letter_sub_folders** | **bool** |  | [optional] 
-**show_intro_detection_scheduled_task** | **bool** |  | [optional] 
 **optimize_database_on_shutdown** | **bool** |  | [optional] 
 **database_analysis_limit** | **int** |  | [optional] 
 **disable_async_io** | **bool** |  | [optional] 

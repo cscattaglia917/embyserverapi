@@ -1,6 +1,6 @@
 # embyapi.PlaystateServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://192.168.1.6:8096/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -100,7 +100,7 @@ user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 next_media_type = 'next_media_type_example' # str | The next media type that will play
-position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms (optional)
+position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1ms = 10000 ticks. (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **media_source_id** | **str**| The id of the MediaSource | 
  **next_media_type** | **str**| The next media type that will play | 
- **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1 tick &#x3D; 10000 ms | [optional] 
+ **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1ms &#x3D; 10000 ticks. | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
 
@@ -617,7 +617,7 @@ user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 next_media_type = 'next_media_type_example' # str | The next media type that will play
-position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms (optional)
+position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1ms = 10000 ticks. (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **media_source_id** | **str**| The id of the MediaSource | 
  **next_media_type** | **str**| The next media type that will play | 
- **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1 tick &#x3D; 10000 ms | [optional] 
+ **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1ms &#x3D; 10000 ticks. | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
 
@@ -682,7 +682,7 @@ body = embyapi.MediaEncodingApiOnPlaybackProgress() # MediaEncodingApiOnPlayback
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
-position_ticks = 789 # int | Optional. The current position, in ticks. 1 tick = 10000 ms (optional)
+position_ticks = 789 # int | Optional. The current position, in ticks. 1ms = 10000 ticks. (optional)
 is_paused = true # bool | Indicates if the player is paused. (optional)
 is_muted = true # bool | Indicates if the player is muted. (optional)
 audio_stream_index = 56 # int |  (optional)
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
  **media_source_id** | **str**| The id of the MediaSource | 
  **user_id** | **str**| User Id | 
  **id** | **str**| Item Id | 
- **position_ticks** | **int**| Optional. The current position, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
+ **position_ticks** | **int**| Optional. The current position, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
  **is_paused** | **bool**| Indicates if the player is paused. | [optional] 
  **is_muted** | **bool**| Indicates if the player is muted. | [optional] 
  **audio_stream_index** | **int**|  | [optional] 

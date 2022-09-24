@@ -1,11 +1,14 @@
 # embyapi.UserActivityAPIApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://192.168.1.6:8096/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_user_usage_stats_by_breakdowntype_breakdownreport**](UserActivityAPIApi.md#get_user_usage_stats_by_breakdowntype_breakdownreport) | **GET** /user_usage_stats/{BreakdownType}/BreakdownReport | Gets a breakdown of a usage metric
 [**get_user_usage_stats_by_userid_by_date_getitems**](UserActivityAPIApi.md#get_user_usage_stats_by_userid_by_date_getitems) | **GET** /user_usage_stats/{UserID}/{Date}/GetItems | Gets activity for {USER} for {Date} formatted as yyyy-MM-dd
+[**get_user_usage_stats_get_item_path**](UserActivityAPIApi.md#get_user_usage_stats_get_item_path) | **GET** /user_usage_stats/get_item_path | Get a list of items for type and filtered
+[**get_user_usage_stats_get_item_stats**](UserActivityAPIApi.md#get_user_usage_stats_get_item_stats) | **GET** /user_usage_stats/get_item_stats | Get a list of items for type and filtered
+[**get_user_usage_stats_get_items**](UserActivityAPIApi.md#get_user_usage_stats_get_items) | **GET** /user_usage_stats/get_items | Get a list of items for type and filtered
 [**get_user_usage_stats_hourlyreport**](UserActivityAPIApi.md#get_user_usage_stats_hourlyreport) | **GET** /user_usage_stats/HourlyReport | Gets a report of the available activity per hour
 [**get_user_usage_stats_load_backup**](UserActivityAPIApi.md#get_user_usage_stats_load_backup) | **GET** /user_usage_stats/load_backup | Loads a backup from a file
 [**get_user_usage_stats_moviesreport**](UserActivityAPIApi.md#get_user_usage_stats_moviesreport) | **GET** /user_usage_stats/MoviesReport | Gets Movies counts
@@ -123,6 +126,172 @@ Name | Type | Description  | Notes
  **user_id** | **str**| User Id | 
  **_date** | **str**| UTC DateTime, Format yyyy-MM-dd | 
  **filter** | **str**| Comma separated list of media types to filter (movies,series) | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_usage_stats_get_item_path**
+> object get_user_usage_stats_get_item_path(id)
+
+Get a list of items for type and filtered
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserActivityAPIApi(embyapi.ApiClient(configuration))
+id = 56 # int | item id
+
+try:
+    # Get a list of items for type and filtered
+    api_response = api_instance.get_user_usage_stats_get_item_path(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserActivityAPIApi->get_user_usage_stats_get_item_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| item id | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_usage_stats_get_item_stats**
+> object get_user_usage_stats_get_item_stats(id)
+
+Get a list of items for type and filtered
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserActivityAPIApi(embyapi.ApiClient(configuration))
+id = 56 # int | item id
+
+try:
+    # Get a list of items for type and filtered
+    api_response = api_instance.get_user_usage_stats_get_item_stats(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserActivityAPIApi->get_user_usage_stats_get_item_stats: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| item id | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_usage_stats_get_items**
+> object get_user_usage_stats_get_items(filter=filter, item_type=item_type, parent=parent)
+
+Get a list of items for type and filtered
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.UserActivityAPIApi(embyapi.ApiClient(configuration))
+filter = 'filter_example' # str | filter string (optional)
+item_type = 'item_type_example' # str | type of items to return (optional)
+parent = 56 # int | parentid (optional)
+
+try:
+    # Get a list of items for type and filtered
+    api_response = api_instance.get_user_usage_stats_get_items(filter=filter, item_type=item_type, parent=parent)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserActivityAPIApi->get_user_usage_stats_get_items: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **str**| filter string | [optional] 
+ **item_type** | **str**| type of items to return | [optional] 
+ **parent** | **int**| parentid | [optional] 
 
 ### Return type
 
