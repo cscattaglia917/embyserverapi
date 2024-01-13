@@ -54299,7 +54299,7 @@
         "requestBody": {
           "description": "Binary stream",
           "content": {
-            "application/octet-stream": {
+            "image/png": {
               "schema": {
                 "type": "string",
                 "format": "binary"
