@@ -133,7 +133,7 @@ class TvShowsServiceApi(object):
         :param str album_artist_starts_with_or_greater: Optional filter by items whose name is sorted equally or greater than a given input string.
         :param str name_starts_with: Optional filter by items whose name is sorted equally than a given input string.
         :param str name_less_than: Optional filter by items whose name is equally or lesser than a given input string.
-        :return: None
+        :return: QueryResultBaseItemDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -245,7 +245,7 @@ class TvShowsServiceApi(object):
         :param str album_artist_starts_with_or_greater: Optional filter by items whose name is sorted equally or greater than a given input string.
         :param str name_starts_with: Optional filter by items whose name is sorted equally than a given input string.
         :param str name_less_than: Optional filter by items whose name is equally or lesser than a given input string.
-        :return: None
+        :return: QueryResultBaseItemDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -464,6 +464,10 @@ class TvShowsServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
 

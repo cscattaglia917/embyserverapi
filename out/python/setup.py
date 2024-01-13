@@ -17,7 +17,7 @@ CWD = Path(__file__).parent
 long_description = (CWD / "README.md").read_text()
 
 NAME = "EmbyServerAPI"
-VERSION = "3.2.0"
+VERSION = "3.2.2"
 # To install the library, run the following
 #
 # python setup.py install
