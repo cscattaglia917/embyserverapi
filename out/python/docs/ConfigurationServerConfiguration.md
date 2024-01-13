@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enable_u_pn_p** | **bool** |  | [optional] 
+**enable_upn_p** | **bool** |  | [optional] 
 **public_port** | **int** |  | [optional] 
 **public_https_port** | **int** |  | [optional] 
 **http_server_port_number** | **int** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **library_monitor_delay** | **int** |  | [optional] 
 **enable_dashboard_response_caching** | **bool** |  | [optional] 
 **dashboard_source_path** | **str** |  | [optional] 
-**image_saving_convention** | **str** |  | [optional] 
+**image_saving_convention** | [**ConfigurationImageSavingConvention**](ConfigurationImageSavingConvention.md) |  | [optional] 
 **enable_automatic_restart** | **bool** |  | [optional] 
 **collection_folder_ids_migrated** | **bool** |  | [optional] 
 **server_name** | **str** |  | [optional] 

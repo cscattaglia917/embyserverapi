@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **server_id** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **item_id** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | [**UsersUserActionType**](UsersUserActionType.md) |  | [optional] 
 **_date** | **datetime** |  | [optional] 
 **position_ticks** | **int** |  | [optional] 
 

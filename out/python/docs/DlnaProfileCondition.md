@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**condition** | **str** |  | [optional] 
-**_property** | **str** |  | [optional] 
+**condition** | [**DlnaProfileConditionType**](DlnaProfileConditionType.md) |  | [optional] 
+**_property** | [**DlnaProfileConditionValue**](DlnaProfileConditionValue.md) |  | [optional] 
 **value** | **str** |  | [optional] 
 **is_required** | **bool** |  | [optional] 
 

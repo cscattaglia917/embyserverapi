@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **value** | **object** |  | [optional] 
 **operator** | [**SmartPlaylistContractsOperatorDto**](SmartPlaylistContractsOperatorDto.md) |  | [optional] 
 

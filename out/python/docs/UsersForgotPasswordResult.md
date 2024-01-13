@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **str** |  | [optional] 
+**action** | [**UsersForgotPasswordAction**](UsersForgotPasswordAction.md) |  | [optional] 
 **pin_file** | **str** |  | [optional] 
 **pin_expiration_date** | **datetime** |  | [optional] 
 

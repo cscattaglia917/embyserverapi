@@ -1,6 +1,6 @@
 # embyapi.RemoteImageServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -86,7 +86,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.RemoteImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | The image type (optional)
+type = embyapi.ImageType() # ImageType | The image type (optional)
 start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 limit = 56 # int | Optional. The maximum number of records to return (optional)
 provider_name = 'provider_name_example' # str | Optional. The image provider to use (optional)
@@ -105,7 +105,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| The image type | [optional] 
+ **type** | [**ImageType**](.md)| The image type | [optional] 
  **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
  **limit** | **int**| Optional. The maximum number of records to return | [optional] 
  **provider_name** | **str**| Optional. The image provider to use | [optional] 
@@ -204,7 +204,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.RemoteImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | The image type
+type = embyapi.ImageType() # ImageType | The image type
 provider_name = 'provider_name_example' # str | The image provider (optional)
 image_url = 'image_url_example' # str | The image url (optional)
 
@@ -220,7 +220,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| The image type | 
+ **type** | [**ImageType**](.md)| The image type | 
  **provider_name** | **str**| The image provider | [optional] 
  **image_url** | **str**| The image url | [optional] 
 

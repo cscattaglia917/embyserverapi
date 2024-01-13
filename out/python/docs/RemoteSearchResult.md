@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**provider_ids** | **list[object]** |  | [optional] 
+**provider_ids** | [**ProviderIdDictionary**](ProviderIdDictionary.md) |  | [optional] 
 **production_year** | **int** |  | [optional] 
 **index_number** | **int** |  | [optional] 
 **index_number_end** | **int** |  | [optional] 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **format** | **str** |  | [optional] 
-**method** | **str** |  | [optional] 
+**method** | [**DlnaSubtitleDeliveryMethod**](DlnaSubtitleDeliveryMethod.md) |  | [optional] 
 **didl_mode** | **str** |  | [optional] 
 **language** | **str** |  | [optional] 
 **container** | **str** |  | [optional] 

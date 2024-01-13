@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **feature_id** | **str** |  | [optional] 
 **reg_info** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 
-**target_system** | **str** |  | [optional] 
+**target_system** | [**UpdatesPackageTargetSystem**](UpdatesPackageTargetSystem.md) |  | [optional] 
 **guid** | **str** |  | [optional] 
 **total_ratings** | **int** |  | [optional] 
 **avg_rating** | **float** |  | [optional] 

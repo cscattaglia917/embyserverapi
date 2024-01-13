@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **include_tags** | **list[str]** |  | [optional] 
 **enable_user_preference_access** | **bool** |  | [optional] 
 **access_schedules** | [**list[ConfigurationAccessSchedule]**](ConfigurationAccessSchedule.md) |  | [optional] 
-**block_unrated_items** | **list[str]** |  | [optional] 
+**block_unrated_items** | [**list[ConfigurationUnratedItem]**](ConfigurationUnratedItem.md) |  | [optional] 
 **enable_remote_control_of_other_users** | **bool** |  | [optional] 
 **enable_shared_device_control** | **bool** |  | [optional] 
 **enable_remote_access** | **bool** |  | [optional] 

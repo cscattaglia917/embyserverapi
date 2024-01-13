@@ -1,6 +1,6 @@
 # embyapi.DynamicHlsServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -108,14 +108,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -149,14 +149,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 
@@ -217,14 +217,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -258,14 +258,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 
@@ -435,14 +435,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -476,14 +476,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 
@@ -544,14 +544,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -585,14 +585,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 
@@ -762,14 +762,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -803,14 +803,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 
@@ -923,14 +923,14 @@ level = 'level_example' # str | Optional. Specify a level for the h264 profile, 
 framerate = 3.4 # float | Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 max_framerate = 3.4 # float | Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. (optional)
 copy_timestamps = true # bool | Whether or not to copy timestamps when transcoding with an offset. Defaults to false. (optional)
-start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1ms = 10000 ticks. (optional)
+start_time_ticks = 789 # int | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms (optional)
 width = 56 # int | Optional. The fixed horizontal resolution of the encoded video. (optional)
 height = 56 # int | Optional. The fixed vertical resolution of the encoded video. (optional)
 max_width = 56 # int | Optional. The maximum horizontal resolution of the encoded video. (optional)
 max_height = 56 # int | Optional. The maximum vertical resolution of the encoded video. (optional)
 video_bit_rate = 56 # int | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 subtitle_stream_index = 56 # int | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-subtitle_method = 'subtitle_method_example' # str | Optional. Specify the subtitle delivery method. (optional)
+subtitle_method = embyapi.DlnaSubtitleDeliveryMethod() # DlnaSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 max_ref_frames = 56 # int | Optional. (optional)
 max_video_bit_depth = 56 # int | Optional. (optional)
 video_codec = 'video_codec_example' # str | Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h264, mpeg4, theora, vpx, wmv. (optional)
@@ -964,14 +964,14 @@ Name | Type | Description  | Notes
  **framerate** | **float**| Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **max_framerate** | **float**| Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements. | [optional] 
  **copy_timestamps** | **bool**| Whether or not to copy timestamps when transcoding with an offset. Defaults to false. | [optional] 
- **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **start_time_ticks** | **int**| Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **width** | **int**| Optional. The fixed horizontal resolution of the encoded video. | [optional] 
  **height** | **int**| Optional. The fixed vertical resolution of the encoded video. | [optional] 
  **max_width** | **int**| Optional. The maximum horizontal resolution of the encoded video. | [optional] 
  **max_height** | **int**| Optional. The maximum vertical resolution of the encoded video. | [optional] 
  **video_bit_rate** | **int**| Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | [optional] 
  **subtitle_stream_index** | **int**| Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | [optional] 
- **subtitle_method** | **str**| Optional. Specify the subtitle delivery method. | [optional] 
+ **subtitle_method** | [**DlnaSubtitleDeliveryMethod**](.md)| Optional. Specify the subtitle delivery method. | [optional] 
  **max_ref_frames** | **int**| Optional. | [optional] 
  **max_video_bit_depth** | **int**| Optional. | [optional] 
  **video_codec** | **str**| Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#x27;s extension. Options: h264, mpeg4, theora, vpx, wmv. | [optional] 

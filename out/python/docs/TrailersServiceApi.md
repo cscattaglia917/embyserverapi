@@ -1,6 +1,6 @@
 # embyapi.TrailersServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

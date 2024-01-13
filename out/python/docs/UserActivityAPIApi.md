@@ -1,6 +1,6 @@
 # embyapi.UserActivityAPIApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.scattaglia.com/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 Gets a breakdown of a usage metric
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 Gets activity for {USER} for {Date} formatted as yyyy-MM-dd
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 Get a list of items for type and filtered
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 Get a list of items for type and filtered
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 Get a list of items for type and filtered
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 Gets a report of the available activity per hour
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 Loads a backup from a file
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 Gets Movies counts
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 Gets play activity for number of days
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 Saves a backup of the playback report data to the backup path
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -595,7 +595,7 @@ This endpoint does not need any parameter.
 
 Gets Session Info
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -645,7 +645,7 @@ This endpoint does not need any parameter.
 
 Gets TV Shows counts
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 Gets types filter list items
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -753,7 +753,7 @@ This endpoint does not need any parameter.
 
 Gets a report of the available activity per hour
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -809,7 +809,7 @@ Name | Type | Description  | Notes
 
 Get users
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -859,7 +859,7 @@ This endpoint does not need any parameter.
 
 Get users
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -915,7 +915,7 @@ Name | Type | Description  | Notes
 
 Gets a report of all played items for a user in a date period
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -979,7 +979,7 @@ Name | Type | Description  | Notes
 
 Post a backup for importing
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -1032,7 +1032,7 @@ void (empty response body)
 
 Submit an SQL query
 
-Requires authentication as user
+Requires authentication as administrator
 
 ### Example
 ```python

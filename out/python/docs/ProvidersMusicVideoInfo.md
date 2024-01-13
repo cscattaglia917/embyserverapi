@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **metadata_language** | **str** |  | [optional] 
 **metadata_country_code** | **str** |  | [optional] 
-**provider_ids** | **list[object]** |  | [optional] 
+**provider_ids** | [**ProviderIdDictionary**](ProviderIdDictionary.md) |  | [optional] 
 **year** | **int** |  | [optional] 
 **index_number** | **int** |  | [optional] 
 **parent_index_number** | **int** |  | [optional] 

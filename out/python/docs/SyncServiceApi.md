@@ -1,6 +1,6 @@
 # embyapi.SyncServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -533,7 +533,7 @@ user_id = 'user_id_example' # str | UserId
 item_ids = 'item_ids_example' # str | ItemIds (optional)
 parent_id = 'parent_id_example' # str | ParentId (optional)
 target_id = 'target_id_example' # str | TargetId (optional)
-category = 'category_example' # str | Category (optional)
+category = embyapi.SyncSyncCategory() # SyncSyncCategory | Category (optional)
 
 try:
     # Gets a list of available sync targets.
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
  **item_ids** | **str**| ItemIds | [optional] 
  **parent_id** | **str**| ParentId | [optional] 
  **target_id** | **str**| TargetId | [optional] 
- **category** | **str**| Category | [optional] 
+ **category** | [**SyncSyncCategory**](.md)| Category | [optional] 
 
 ### Return type
 

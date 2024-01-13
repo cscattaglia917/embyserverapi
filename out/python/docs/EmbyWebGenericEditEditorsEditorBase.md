@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**editor_type** | **str** |  | [optional] 
+**editor_type** | [**EmbyWebGenericEditCommonEditorTypes**](EmbyWebGenericEditCommonEditorTypes.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **allow_empty** | **bool** |  | [optional] 

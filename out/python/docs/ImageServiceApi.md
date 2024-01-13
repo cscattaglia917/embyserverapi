@@ -1,6 +1,6 @@
 # embyapi.ImageServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -78,7 +78,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -92,7 +92,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -134,7 +134,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -148,7 +148,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -190,7 +190,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -204,7 +204,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -246,7 +246,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -260,7 +260,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -296,7 +296,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -325,7 +325,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -376,7 +376,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -405,7 +405,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -456,7 +456,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -485,7 +485,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -536,7 +536,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -565,7 +565,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -616,7 +616,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -645,7 +645,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -696,7 +696,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -725,7 +725,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -830,7 +830,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -859,7 +859,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -910,7 +910,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -939,7 +939,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -996,7 +996,7 @@ tag = 'tag_example' # str | Optional. Supply the cache tag from the item object 
 format = 'format_example' # str | Determines the output foramt of the image - original,gif,jpg,png
 percent_played = 1.2 # float | Optional percent to render for the percent played overlay
 unplayed_count = 56 # int | Optional unplayed count overlay to render
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 width = 56 # int | The fixed image width to return. (optional)
 height = 56 # int | The fixed image height to return. (optional)
@@ -1025,7 +1025,7 @@ Name | Type | Description  | Notes
  **format** | **str**| Determines the output foramt of the image - original,gif,jpg,png | 
  **percent_played** | **float**| Optional percent to render for the percent played overlay | 
  **unplayed_count** | **int**| Optional unplayed count overlay to render | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **width** | **int**| The fixed image width to return. | [optional] 
  **height** | **int**| The fixed image height to return. | [optional] 
@@ -1070,7 +1070,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1099,7 +1099,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1150,7 +1150,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1179,7 +1179,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1230,7 +1230,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1259,7 +1259,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1310,7 +1310,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1339,7 +1339,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1390,7 +1390,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1419,7 +1419,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1470,7 +1470,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1499,7 +1499,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1550,7 +1550,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1579,7 +1579,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1630,7 +1630,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1659,7 +1659,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1710,7 +1710,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1739,7 +1739,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1790,7 +1790,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1819,7 +1819,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1870,7 +1870,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1899,7 +1899,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1950,7 +1950,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1979,7 +1979,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2030,7 +2030,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2059,7 +2059,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2110,7 +2110,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2139,7 +2139,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2190,7 +2190,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2219,7 +2219,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2270,7 +2270,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2299,7 +2299,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2356,7 +2356,7 @@ tag = 'tag_example' # str | Optional. Supply the cache tag from the item object 
 format = 'format_example' # str | Determines the output foramt of the image - original,gif,jpg,png
 percent_played = 1.2 # float | Optional percent to render for the percent played overlay
 unplayed_count = 56 # int | Optional unplayed count overlay to render
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 width = 56 # int | The fixed image width to return. (optional)
 height = 56 # int | The fixed image height to return. (optional)
@@ -2385,7 +2385,7 @@ Name | Type | Description  | Notes
  **format** | **str**| Determines the output foramt of the image - original,gif,jpg,png | 
  **percent_played** | **float**| Optional percent to render for the percent played overlay | 
  **unplayed_count** | **int**| Optional unplayed count overlay to render | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **width** | **int**| The fixed image width to return. | [optional] 
  **height** | **int**| The fixed image height to return. | [optional] 
@@ -2430,7 +2430,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2459,7 +2459,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2510,7 +2510,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2539,7 +2539,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2590,7 +2590,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2619,7 +2619,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2670,7 +2670,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2699,7 +2699,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2750,7 +2750,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2779,7 +2779,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2830,7 +2830,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2859,7 +2859,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2910,7 +2910,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2939,7 +2939,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2990,7 +2990,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -3019,7 +3019,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -3077,7 +3077,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -3093,7 +3093,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -3136,7 +3136,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -3152,7 +3152,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3194,7 +3194,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -3208,7 +3208,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3250,7 +3250,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 new_index = 56 # int | The new image index
 
@@ -3266,7 +3266,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **new_index** | **int**| The new image index | 
 
@@ -3309,7 +3309,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 url = 'url_example' # str | The url for the new image
 
@@ -3325,7 +3325,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **url** | **str**| The url for the new image | 
 
@@ -3368,7 +3368,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -3382,7 +3382,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -3425,7 +3425,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -3441,7 +3441,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -3484,7 +3484,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -3500,7 +3500,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3542,7 +3542,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -3556,7 +3556,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3598,7 +3598,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -3612,7 +3612,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type

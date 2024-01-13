@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**system_update_level** | **str** |  | [optional] 
+**system_update_level** | [**UpdatesPackageVersionClass**](UpdatesPackageVersionClass.md) |  | [optional] 
 **operating_system_display_name** | **str** |  | [optional] 
 **package_name** | **str** |  | [optional] 
 **has_pending_restart** | **bool** |  | [optional] 

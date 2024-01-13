@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **menu_section** | **str** |  | [optional] 
 **menu_icon** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
-**configuration_page_type** | **str** |  | [optional] 
+**configuration_page_type** | [**PluginsConfigurationPageType**](PluginsConfigurationPageType.md) |  | [optional] 
 **plugin_id** | **str** |  | [optional] 
 **plugin** | [**CommonPluginsIPlugin**](CommonPluginsIPlugin.md) |  | [optional] 
 **translations** | **list[str]** |  | [optional] 

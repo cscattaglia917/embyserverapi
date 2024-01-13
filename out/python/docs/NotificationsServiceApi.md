@@ -1,6 +1,6 @@
 # embyapi.NotificationsServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -253,7 +253,7 @@ name = 'name_example' # str | The notification's name
 description = 'description_example' # str | The notification's description
 image_url = 'image_url_example' # str | The notification's image url (optional)
 url = 'url_example' # str | The notification's info url (optional)
-level = 'level_example' # str | The notification level (optional)
+level = embyapi.NotificationsNotificationLevel() # NotificationsNotificationLevel | The notification level (optional)
 
 try:
     # Sends a notification to all admin users
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
  **description** | **str**| The notification&#x27;s description | 
  **image_url** | **str**| The notification&#x27;s image url | [optional] 
  **url** | **str**| The notification&#x27;s info url | [optional] 
- **level** | **str**| The notification level | [optional] 
+ **level** | [**NotificationsNotificationLevel**](.md)| The notification level | [optional] 
 
 ### Return type
 

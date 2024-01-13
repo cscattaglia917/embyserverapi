@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **next_update** | **datetime** |  | [optional] 
 **last_updated** | **datetime** |  | [optional] 
 **last_ran** | **datetime** |  | [optional] 
+**then_bys** | **list[str]** |  | [optional] 
 **last_duration_str** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

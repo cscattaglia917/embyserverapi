@@ -25,6 +25,9 @@ Name | Type | Description | Notes
 **source_type** | **str** |  | [optional] 
 **source** | [**SmartPlaylistContractsSourceDto**](SmartPlaylistContractsSourceDto.md) |  | [optional] 
 **sort_job** | [**SmartPlaylistContractsSortJobDto**](SmartPlaylistContractsSortJobDto.md) |  | [optional] 
+**monitor_mode** | **bool** |  | [optional] 
+**ui_sections** | [**SmartPlaylistContractsUISectionsDto**](SmartPlaylistContractsUISectionsDto.md) |  | [optional] 
+**notes** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **play_default_audio_track** | **bool** |  | [optional] 
 **subtitle_language_preference** | **str** |  | [optional] 
 **display_missing_episodes** | **bool** |  | [optional] 
-**subtitle_mode** | **str** |  | [optional] 
+**subtitle_mode** | [**ConfigurationSubtitlePlaybackMode**](ConfigurationSubtitlePlaybackMode.md) |  | [optional] 
 **enable_local_password** | **bool** |  | [optional] 
 **ordered_views** | **list[str]** |  | [optional] 
 **latest_items_excludes** | **list[str]** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **remember_subtitle_selections** | **bool** |  | [optional] 
 **enable_next_episode_auto_play** | **bool** |  | [optional] 
 **resume_rewind_seconds** | **int** |  | [optional] 
-**intro_skip_mode** | **str** |  | [optional] 
+**intro_skip_mode** | [**ConfigurationSegmentSkipMode**](ConfigurationSegmentSkipMode.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

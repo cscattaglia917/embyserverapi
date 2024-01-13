@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image_type** | **str** |  | [optional] 
+**image_type** | [**ImageType**](ImageType.md) |  | [optional] 
 **image_index** | **int** |  | [optional] 
 **path** | **str** |  | [optional] 
 **filename** | **str** |  | [optional] 

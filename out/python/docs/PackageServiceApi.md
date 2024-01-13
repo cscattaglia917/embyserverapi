@@ -1,6 +1,6 @@
 # embyapi.PackageServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -260,7 +260,7 @@ api_instance = embyapi.PackageServiceApi(embyapi.ApiClient(configuration))
 name = 'name_example' # str | Package name
 assembly_guid = 'assembly_guid_example' # str | Guid of the associated assembly (optional)
 version = 'version_example' # str | Optional version. Defaults to latest version. (optional)
-update_class = 'update_class_example' # str | Optional update class (Dev, Beta, Release). Defaults to Release. (optional)
+update_class = embyapi.UpdatesPackageVersionClass() # UpdatesPackageVersionClass | Optional update class (Dev, Beta, Release). Defaults to Release. (optional)
 
 try:
     # Installs a package
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Package name | 
  **assembly_guid** | **str**| Guid of the associated assembly | [optional] 
  **version** | **str**| Optional version. Defaults to latest version. | [optional] 
- **update_class** | **str**| Optional update class (Dev, Beta, Release). Defaults to Release. | [optional] 
+ **update_class** | [**UpdatesPackageVersionClass**](.md)| Optional update class (Dev, Beta, Release). Defaults to Release. | [optional] 
 
 ### Return type
 

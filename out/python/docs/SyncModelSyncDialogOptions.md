@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **targets** | [**list[SyncSyncTarget]**](SyncSyncTarget.md) |  | [optional] 
-**options** | **list[str]** |  | [optional] 
+**options** | [**list[SyncModelSyncJobOption]**](SyncModelSyncJobOption.md) |  | [optional] 
 **quality_options** | [**list[SyncModelSyncQualityOption]**](SyncModelSyncQualityOption.md) |  | [optional] 
 **profile_options** | [**list[SyncModelSyncProfileOption]**](SyncModelSyncProfileOption.md) |  | [optional] 
 

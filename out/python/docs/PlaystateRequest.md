@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**command** | **str** |  | [optional] 
+**command** | [**PlaystateCommand**](PlaystateCommand.md) |  | [optional] 
 **seek_position_ticks** | **int** |  | [optional] 
 **controlling_user_id** | **str** |  | [optional] 
 

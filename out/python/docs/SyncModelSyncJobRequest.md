@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **target_id** | **str** |  | [optional] 
 **item_ids** | **list[str]** |  | [optional] 
-**category** | **str** |  | [optional] 
+**category** | [**SyncSyncCategory**](SyncSyncCategory.md) |  | [optional] 
 **parent_id** | **str** |  | [optional] 
 **quality** | **str** |  | [optional] 
 **profile** | **str** |  | [optional] 

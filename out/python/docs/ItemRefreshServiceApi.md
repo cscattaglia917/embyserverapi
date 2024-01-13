@@ -1,6 +1,6 @@
 # embyapi.ItemRefreshServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,8 +31,8 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ItemRefreshServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
 recursive = true # bool | Indicates if the refresh should occur recursively. (optional)
-metadata_refresh_mode = 'metadata_refresh_mode_example' # str | Specifies the metadata refresh mode (optional)
-image_refresh_mode = 'image_refresh_mode_example' # str | Specifies the image refresh mode (optional)
+metadata_refresh_mode = embyapi.ProvidersMetadataRefreshMode() # ProvidersMetadataRefreshMode | Specifies the metadata refresh mode (optional)
+image_refresh_mode = embyapi.ProvidersMetadataRefreshMode() # ProvidersMetadataRefreshMode | Specifies the image refresh mode (optional)
 replace_all_metadata = true # bool | Determines if metadata should be replaced. Only applicable if mode is FullRefresh (optional)
 replace_all_images = true # bool | Determines if images should be replaced. Only applicable if mode is FullRefresh (optional)
 
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
  **recursive** | **bool**| Indicates if the refresh should occur recursively. | [optional] 
- **metadata_refresh_mode** | **str**| Specifies the metadata refresh mode | [optional] 
- **image_refresh_mode** | **str**| Specifies the image refresh mode | [optional] 
+ **metadata_refresh_mode** | [**ProvidersMetadataRefreshMode**](.md)| Specifies the metadata refresh mode | [optional] 
+ **image_refresh_mode** | [**ProvidersMetadataRefreshMode**](.md)| Specifies the image refresh mode | [optional] 
  **replace_all_metadata** | **bool**| Determines if metadata should be replaced. Only applicable if mode is FullRefresh | [optional] 
  **replace_all_images** | **bool**| Determines if images should be replaced. Only applicable if mode is FullRefresh | [optional] 
 

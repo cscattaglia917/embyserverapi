@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **prefix** | **str** |  | [optional] 
 **connect_user_name** | **str** |  | [optional] 
 **date_created** | **datetime** |  | [optional] 
-**connect_link_type** | **str** |  | [optional] 
+**connect_link_type** | [**ConnectUserLinkType**](ConnectUserLinkType.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **primary_image_tag** | **str** |  | [optional] 
 **has_password** | **bool** |  | [optional] 

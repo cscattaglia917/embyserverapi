@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **media_source** | [**MediaSourceInfo**](MediaSourceInfo.md) |  | [optional] 
 **target_id** | **str** |  | [optional] 
 **output_path** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | [**SyncModelSyncJobItemStatus**](SyncModelSyncJobItemStatus.md) |  | [optional] 
 **progress** | **float** |  | [optional] 
 **date_created** | **datetime** |  | [optional] 
 **primary_image_item_id** | **str** |  | [optional] 

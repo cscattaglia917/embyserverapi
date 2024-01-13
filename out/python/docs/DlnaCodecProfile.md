@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | [optional] 
+**type** | [**DlnaCodecType**](DlnaCodecType.md) |  | [optional] 
 **conditions** | [**list[DlnaProfileCondition]**](DlnaProfileCondition.md) |  | [optional] 
 **apply_conditions** | [**list[DlnaProfileCondition]**](DlnaProfileCondition.md) |  | [optional] 
 **codec** | **str** |  | [optional] 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **allow_audio_stream_copy** | **bool** |  | [optional] 
 **is_playback** | **bool** |  | [optional] 
 **auto_open_live_stream** | **bool** |  | [optional] 
-**direct_play_protocols** | **list[str]** |  | [optional] 
+**direct_play_protocols** | [**list[MediaInfoMediaProtocol]**](MediaInfoMediaProtocol.md) |  | [optional] 
 **current_play_session_id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

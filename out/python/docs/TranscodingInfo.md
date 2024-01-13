@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **width** | **int** |  | [optional] 
 **height** | **int** |  | [optional] 
 **audio_channels** | **int** |  | [optional] 
-**transcode_reasons** | **list[str]** |  | [optional] 
+**transcode_reasons** | [**list[TranscodeReason]**](TranscodeReason.md) |  | [optional] 
 **current_cpu_usage** | **float** |  | [optional] 
 **average_cpu_usage** | **float** |  | [optional] 
 **cpu_history** | [**list[TupleDoubleDouble]**](TupleDoubleDouble.md) |  | [optional] 
@@ -32,8 +32,8 @@ Name | Type | Description | Notes
 **video_encoder_is_hardware** | **bool** |  | [optional] 
 **video_encoder_media_type** | **str** |  | [optional] 
 **video_encoder_hw_accel** | **str** |  | [optional] 
-**video_pipeline_info** | **list[object]** |  | [optional] 
-**subtitle_pipeline_infos** | **list[list[object]]** |  | [optional] 
+**video_pipeline_info** | [**list[TranscodingVpStepInfo]**](TranscodingVpStepInfo.md) |  | [optional] 
+**subtitle_pipeline_infos** | **list[list[TranscodingVpStepInfo]]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

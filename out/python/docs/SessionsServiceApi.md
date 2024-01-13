@@ -1,6 +1,6 @@
 # embyapi.SessionsServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -647,7 +647,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.PlayRequest() # PlayRequest | PlayRequest: 
 item_ids = [56] # list[int] | The ids of the items to play, comma delimited
-play_command = 'play_command_example' # str | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
+play_command = embyapi.PlayCommand() # PlayCommand | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
 id = 'id_example' # str | Session Id
 start_position_ticks = 789 # int | The starting position of the first item. (optional)
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**PlayRequest**](PlayRequest.md)| PlayRequest:  | 
  **item_ids** | [**list[int]**](int.md)| The ids of the items to play, comma delimited | 
- **play_command** | **str**| The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
+ **play_command** | [**PlayCommand**](.md)| The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
  **id** | **str**| Session Id | 
  **start_position_ticks** | **int**| The starting position of the first item. | [optional] 
 
@@ -708,7 +708,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.PlaystateRequest() # PlaystateRequest | PlaystateRequest: 
 id = 'id_example' # str | Session Id
-command = 'command_example' # str | 
+command = embyapi.PlaystateCommand() # PlaystateCommand | 
 
 try:
     # Issues a playstate command to a client
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**PlaystateRequest**](PlaystateRequest.md)| PlaystateRequest:  | 
  **id** | **str**| Session Id | 
- **command** | **str**|  | 
+ **command** | [**PlaystateCommand**](.md)|  | 
 
 ### Return type
 

@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** |  | [optional] 
+**status** | [**LiveTvRecordingStatus**](LiveTvRecordingStatus.md) |  | [optional] 
 **series_timer_id** | **str** |  | [optional] 
 **run_time_ticks** | **int** |  | [optional] 
 **program_info** | [**BaseItemDto**](BaseItemDto.md) |  | [optional] 
-**timer_type** | **str** |  | [optional] 
+**timer_type** | [**LiveTvTimerType**](LiveTvTimerType.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **server_id** | **str** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **parent_backdrop_item_id** | **str** |  | [optional] 
 **parent_backdrop_image_tags** | **list[str]** |  | [optional] 
 **is_post_padding_required** | **bool** |  | [optional] 
-**keep_until** | **str** |  | [optional] 
+**keep_until** | [**LiveTvKeepUntil**](LiveTvKeepUntil.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

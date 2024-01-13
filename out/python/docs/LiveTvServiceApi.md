@@ -1,6 +1,6 @@
 # embyapi.LiveTvServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 [**get_livetv_listingproviders_lineups**](LiveTvServiceApi.md#get_livetv_listingproviders_lineups) | **GET** /LiveTv/ListingProviders/Lineups | Gets available lineups
 [**get_livetv_listingproviders_schedulesdirect_countries**](LiveTvServiceApi.md#get_livetv_listingproviders_schedulesdirect_countries) | **GET** /LiveTv/ListingProviders/SchedulesDirect/Countries | Gets available lineups
 [**get_livetv_liverecordings_by_id_stream**](LiveTvServiceApi.md#get_livetv_liverecordings_by_id_stream) | **GET** /LiveTv/LiveRecordings/{Id}/stream | Gets a live tv channel
-[**get_livetv_livestreamfiles_by_id_by_container**](LiveTvServiceApi.md#get_livetv_livestreamfiles_by_id_by_container) | **GET** /LiveTv/LiveStreamFiles/{Id}/stream.{Container} | Gets a live tv channel
+[**get_livetv_livestreamfiles_by_id_stream_by_container**](LiveTvServiceApi.md#get_livetv_livestreamfiles_by_id_stream_by_container) | **GET** /LiveTv/LiveStreamFiles/{Id}/stream.{Container} | Gets a live tv channel
 [**get_livetv_manage_channels**](LiveTvServiceApi.md#get_livetv_manage_channels) | **GET** /LiveTv/Manage/Channels | Gets the channel management list
 [**get_livetv_programs**](LiveTvServiceApi.md#get_livetv_programs) | **GET** /LiveTv/Programs | Gets available live tv epgs..
 [**get_livetv_programs_recommended**](LiveTvServiceApi.md#get_livetv_programs_recommended) | **GET** /LiveTv/Programs/Recommended | Gets available live tv epgs..
@@ -47,10 +47,6 @@ Method | HTTP request | Description
 [**get_livetv_tuners_discvover**](LiveTvServiceApi.md#get_livetv_tuners_discvover) | **GET** /LiveTv/Tuners/Discvover | 
 [**head_livetv_channelmappingoptions**](LiveTvServiceApi.md#head_livetv_channelmappingoptions) | **HEAD** /LiveTv/ChannelMappingOptions | 
 [**head_livetv_channelmappings**](LiveTvServiceApi.md#head_livetv_channelmappings) | **HEAD** /LiveTv/ChannelMappings | 
-[**options_livetv_channelmappingoptions**](LiveTvServiceApi.md#options_livetv_channelmappingoptions) | **OPTIONS** /LiveTv/ChannelMappingOptions | 
-[**options_livetv_channelmappings**](LiveTvServiceApi.md#options_livetv_channelmappings) | **OPTIONS** /LiveTv/ChannelMappings | 
-[**patch_livetv_channelmappingoptions**](LiveTvServiceApi.md#patch_livetv_channelmappingoptions) | **PATCH** /LiveTv/ChannelMappingOptions | 
-[**patch_livetv_channelmappings**](LiveTvServiceApi.md#patch_livetv_channelmappings) | **PATCH** /LiveTv/ChannelMappings | 
 [**post_livetv_channelmappingoptions**](LiveTvServiceApi.md#post_livetv_channelmappingoptions) | **POST** /LiveTv/ChannelMappingOptions | 
 [**post_livetv_channelmappings**](LiveTvServiceApi.md#post_livetv_channelmappings) | **POST** /LiveTv/ChannelMappings | 
 [**post_livetv_listingproviders**](LiveTvServiceApi.md#post_livetv_listingproviders) | **POST** /LiveTv/ListingProviders | Adds a listing provider
@@ -567,7 +563,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-type = 'type_example' # str | Optional filter by channel type. (optional)
+type = embyapi.LiveTvChannelType() # LiveTvChannelType | Optional filter by channel type. (optional)
 is_liked = true # bool | Filter by channels that are liked, or not. (optional)
 is_disliked = true # bool | Filter by channels that are disliked, or not. (optional)
 enable_favorite_sorting = true # bool | Incorporate favorite and like status into channel sorting. (optional)
@@ -672,7 +668,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| Optional filter by channel type. | [optional] 
+ **type** | [**LiveTvChannelType**](.md)| Optional filter by channel type. | [optional] 
  **is_liked** | **bool**| Filter by channels that are liked, or not. | [optional] 
  **is_disliked** | **bool**| Filter by channels that are disliked, or not. | [optional] 
  **enable_favorite_sorting** | **bool**| Incorporate favorite and like status into channel sorting. | [optional] 
@@ -1299,7 +1295,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-type = 'type_example' # str | Optional filter by channel type. (optional)
+type = embyapi.LiveTvChannelType() # LiveTvChannelType | Optional filter by channel type. (optional)
 user_id = 'user_id_example' # str | Optional filter by user and attach user data. (optional)
 genre_ids = 'genre_ids_example' # str | The genres to return guide information for. (optional)
 min_start_date = 'min_start_date_example' # str | Optional. The minimum premiere date. Format = ISO (optional)
@@ -1337,7 +1333,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| Optional filter by channel type. | [optional] 
+ **type** | [**LiveTvChannelType**](.md)| Optional filter by channel type. | [optional] 
  **user_id** | **str**| Optional filter by user and attach user data. | [optional] 
  **genre_ids** | **str**| The genres to return guide information for. | [optional] 
  **min_start_date** | **str**| Optional. The minimum premiere date. Format &#x3D; ISO | [optional] 
@@ -1837,8 +1833,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_livetv_livestreamfiles_by_id_by_container**
-> get_livetv_livestreamfiles_by_id_by_container(id, container)
+# **get_livetv_livestreamfiles_by_id_stream_by_container**
+> get_livetv_livestreamfiles_by_id_stream_by_container(id, container)
 
 Gets a live tv channel
 
@@ -1859,9 +1855,9 @@ container = 'container_example' # str |
 
 try:
     # Gets a live tv channel
-    api_instance.get_livetv_livestreamfiles_by_id_by_container(id, container)
+    api_instance.get_livetv_livestreamfiles_by_id_stream_by_container(id, container)
 except ApiException as e:
-    print("Exception when calling LiveTvServiceApi->get_livetv_livestreamfiles_by_id_by_container: %s\n" % e)
+    print("Exception when calling LiveTvServiceApi->get_livetv_livestreamfiles_by_id_stream_by_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -2148,7 +2144,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | Optional filter by channel id. (optional)
-status = 'status_example' # str | Optional filter by recording status. (optional)
+status = embyapi.LiveTvRecordingStatus() # LiveTvRecordingStatus | Optional filter by recording status. (optional)
 is_in_progress = true # bool | Optional filter by recordings that are in progress, or not. (optional)
 series_timer_id = 'series_timer_id_example' # str | Optional filter by recordings belonging to a series timer (optional)
 artist_type = 'artist_type_example' # str | Artist or AlbumArtist (optional)
@@ -2251,7 +2247,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_id** | **str**| Optional filter by channel id. | [optional] 
- **status** | **str**| Optional filter by recording status. | [optional] 
+ **status** | [**LiveTvRecordingStatus**](.md)| Optional filter by recording status. | [optional] 
  **is_in_progress** | **bool**| Optional filter by recordings that are in progress, or not. | [optional] 
  **series_timer_id** | **str**| Optional filter by recordings belonging to a series timer | [optional] 
  **artist_type** | **str**| Artist or AlbumArtist | [optional] 
@@ -2591,7 +2587,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
 sort_by = 'sort_by_example' # str | Optional. Sort by SortName or Priority (optional)
-sort_order = 'sort_order_example' # str | Optional. Sort in Ascending or Descending order (optional)
+sort_order = embyapi.SortOrder() # SortOrder | Optional. Sort in Ascending or Descending order (optional)
 start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 limit = 56 # int | Optional. The maximum number of records to return (optional)
 
@@ -2608,7 +2604,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sort_by** | **str**| Optional. Sort by SortName or Priority | [optional] 
- **sort_order** | **str**| Optional. Sort in Ascending or Descending order | [optional] 
+ **sort_order** | [**SortOrder**](.md)| Optional. Sort in Ascending or Descending order | [optional] 
  **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
  **limit** | **int**| Optional. The maximum number of records to return | [optional] 
 
@@ -3128,214 +3124,6 @@ try:
     api_instance.head_livetv_channelmappings(provider_id)
 except ApiException as e:
     print("Exception when calling LiveTvServiceApi->head_livetv_channelmappings: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_id** | **str**| Provider id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **options_livetv_channelmappingoptions**
-> options_livetv_channelmappingoptions(provider_id)
-
-
-
-Requires authentication as administrator
-
-### Example
-```python
-from __future__ import print_function
-import time
-import embyapi
-from embyapi.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikeyauth
-configuration = embyapi.Configuration()
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-provider_id = 'provider_id_example' # str | Provider id
-
-try:
-    api_instance.options_livetv_channelmappingoptions(provider_id)
-except ApiException as e:
-    print("Exception when calling LiveTvServiceApi->options_livetv_channelmappingoptions: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_id** | **str**| Provider id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **options_livetv_channelmappings**
-> options_livetv_channelmappings(provider_id)
-
-
-
-Requires authentication as administrator
-
-### Example
-```python
-from __future__ import print_function
-import time
-import embyapi
-from embyapi.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikeyauth
-configuration = embyapi.Configuration()
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-provider_id = 'provider_id_example' # str | Provider id
-
-try:
-    api_instance.options_livetv_channelmappings(provider_id)
-except ApiException as e:
-    print("Exception when calling LiveTvServiceApi->options_livetv_channelmappings: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_id** | **str**| Provider id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **patch_livetv_channelmappingoptions**
-> patch_livetv_channelmappingoptions(provider_id)
-
-
-
-Requires authentication as administrator
-
-### Example
-```python
-from __future__ import print_function
-import time
-import embyapi
-from embyapi.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikeyauth
-configuration = embyapi.Configuration()
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-provider_id = 'provider_id_example' # str | Provider id
-
-try:
-    api_instance.patch_livetv_channelmappingoptions(provider_id)
-except ApiException as e:
-    print("Exception when calling LiveTvServiceApi->patch_livetv_channelmappingoptions: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_id** | **str**| Provider id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **patch_livetv_channelmappings**
-> patch_livetv_channelmappings(provider_id)
-
-
-
-Requires authentication as administrator
-
-### Example
-```python
-from __future__ import print_function
-import time
-import embyapi
-from embyapi.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikeyauth
-configuration = embyapi.Configuration()
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = embyapi.LiveTvServiceApi(embyapi.ApiClient(configuration))
-provider_id = 'provider_id_example' # str | Provider id
-
-try:
-    api_instance.patch_livetv_channelmappings(provider_id)
-except ApiException as e:
-    print("Exception when calling LiveTvServiceApi->patch_livetv_channelmappings: %s\n" % e)
 ```
 
 ### Parameters

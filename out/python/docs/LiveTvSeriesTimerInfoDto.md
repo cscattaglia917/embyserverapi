@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **max_recording_seconds** | **int** |  | [optional] 
 **record_new_only** | **bool** |  | [optional] 
 **channel_ids** | **list[str]** |  | [optional] 
-**days** | **list[str]** |  | [optional] 
+**days** | [**list[DayOfWeek]**](DayOfWeek.md) |  | [optional] 
 **image_tags** | **dict(str, str)** |  | [optional] 
 **parent_thumb_item_id** | **str** |  | [optional] 
 **parent_thumb_image_tag** | **str** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **parent_primary_image_tag** | **str** |  | [optional] 
 **series_id** | **str** |  | [optional] 
 **keywords** | [**list[LiveTvKeywordInfo]**](LiveTvKeywordInfo.md) |  | [optional] 
-**timer_type** | **str** |  | [optional] 
+**timer_type** | [**LiveTvTimerType**](LiveTvTimerType.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **server_id** | **str** |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **parent_backdrop_item_id** | **str** |  | [optional] 
 **parent_backdrop_image_tags** | **list[str]** |  | [optional] 
 **is_post_padding_required** | **bool** |  | [optional] 
-**keep_until** | **str** |  | [optional] 
+**keep_until** | [**LiveTvKeepUntil**](LiveTvKeepUntil.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

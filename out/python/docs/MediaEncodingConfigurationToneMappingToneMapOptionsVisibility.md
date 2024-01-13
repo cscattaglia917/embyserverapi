@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **is_open_cl_super_t_available** | **bool** |  | [optional] 
 **is_vaapi_native_available** | **bool** |  | [optional] 
 **is_quick_sync_native_available** | **bool** |  | [optional] 
-**operating_system** | **str** |  | [optional] 
+**operating_system** | [**OperatingSystem**](OperatingSystem.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

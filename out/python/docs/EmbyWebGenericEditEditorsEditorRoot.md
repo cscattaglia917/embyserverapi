@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **postback_actions** | [**list[EmbyWebGenericEditActionsPostbackAction]**](EmbyWebGenericEditActionsPostbackAction.md) |  | [optional] 
 **title_button** | [**EmbyWebGenericEditEditorsEditorButtonItem**](EmbyWebGenericEditEditorsEditorButtonItem.md) |  | [optional] 
 **editor_items** | [**list[EmbyWebGenericEditEditorsEditorBase]**](EmbyWebGenericEditEditorsEditorBase.md) |  | [optional] 
-**editor_type** | **str** |  | [optional] 
+**editor_type** | [**EmbyWebGenericEditCommonEditorTypes**](EmbyWebGenericEditCommonEditorTypes.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **allow_empty** | **bool** |  | [optional] 

@@ -1,6 +1,6 @@
 # embyapi.PlaystateServiceApi
 
-All URIs are relative to *http://192.168.1.6:8096/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -100,7 +100,7 @@ user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 next_media_type = 'next_media_type_example' # str | The next media type that will play
-position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1ms = 10000 ticks. (optional)
+position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **media_source_id** | **str**| The id of the MediaSource | 
  **next_media_type** | **str**| The next media type that will play | 
- **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1ms &#x3D; 10000 ticks. | [optional] 
+ **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1 tick &#x3D; 10000 ms | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
 
@@ -550,7 +550,7 @@ media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 can_seek = true # bool | Indicates if the client can seek (optional)
 audio_stream_index = 56 # int |  (optional)
 subtitle_stream_index = 56 # int |  (optional)
-play_method = 'play_method_example' # str |  (optional)
+play_method = embyapi.PlayMethod() # PlayMethod |  (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
 
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
  **can_seek** | **bool**| Indicates if the client can seek | [optional] 
  **audio_stream_index** | **int**|  | [optional] 
  **subtitle_stream_index** | **int**|  | [optional] 
- **play_method** | **str**|  | [optional] 
+ **play_method** | [**PlayMethod**](.md)|  | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
 
@@ -617,7 +617,7 @@ user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 next_media_type = 'next_media_type_example' # str | The next media type that will play
-position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1ms = 10000 ticks. (optional)
+position_ticks = 789 # int | Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Item Id | 
  **media_source_id** | **str**| The id of the MediaSource | 
  **next_media_type** | **str**| The next media type that will play | 
- **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1ms &#x3D; 10000 ticks. | [optional] 
+ **position_ticks** | **int**| Optional. The position, in ticks, where playback stopped. 1 tick &#x3D; 10000 ms | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
 
@@ -682,16 +682,16 @@ body = embyapi.MediaEncodingApiOnPlaybackProgress() # MediaEncodingApiOnPlayback
 media_source_id = 'media_source_id_example' # str | The id of the MediaSource
 user_id = 'user_id_example' # str | User Id
 id = 'id_example' # str | Item Id
-position_ticks = 789 # int | Optional. The current position, in ticks. 1ms = 10000 ticks. (optional)
+position_ticks = 789 # int | Optional. The current position, in ticks. 1 tick = 10000 ms (optional)
 is_paused = true # bool | Indicates if the player is paused. (optional)
 is_muted = true # bool | Indicates if the player is muted. (optional)
 audio_stream_index = 56 # int |  (optional)
 subtitle_stream_index = 56 # int |  (optional)
 volume_level = 56 # int | Scale of 0-100 (optional)
-play_method = 'play_method_example' # str |  (optional)
+play_method = embyapi.PlayMethod() # PlayMethod |  (optional)
 live_stream_id = 'live_stream_id_example' # str |  (optional)
 play_session_id = 'play_session_id_example' # str |  (optional)
-repeat_mode = 'repeat_mode_example' # str |  (optional)
+repeat_mode = embyapi.RepeatMode() # RepeatMode |  (optional)
 subtitle_offset = 56 # int |  (optional)
 playback_rate = 1.2 # float |  (optional)
 
@@ -710,16 +710,16 @@ Name | Type | Description  | Notes
  **media_source_id** | **str**| The id of the MediaSource | 
  **user_id** | **str**| User Id | 
  **id** | **str**| Item Id | 
- **position_ticks** | **int**| Optional. The current position, in ticks. 1ms &#x3D; 10000 ticks. | [optional] 
+ **position_ticks** | **int**| Optional. The current position, in ticks. 1 tick &#x3D; 10000 ms | [optional] 
  **is_paused** | **bool**| Indicates if the player is paused. | [optional] 
  **is_muted** | **bool**| Indicates if the player is muted. | [optional] 
  **audio_stream_index** | **int**|  | [optional] 
  **subtitle_stream_index** | **int**|  | [optional] 
  **volume_level** | **int**| Scale of 0-100 | [optional] 
- **play_method** | **str**|  | [optional] 
+ **play_method** | [**PlayMethod**](.md)|  | [optional] 
  **live_stream_id** | **str**|  | [optional] 
  **play_session_id** | **str**|  | [optional] 
- **repeat_mode** | **str**|  | [optional] 
+ **repeat_mode** | [**RepeatMode**](.md)|  | [optional] 
  **subtitle_offset** | **int**|  | [optional] 
  **playback_rate** | **float**|  | [optional] 
 
