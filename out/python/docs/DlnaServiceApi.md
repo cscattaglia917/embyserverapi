@@ -1,6 +1,6 @@
 # embyapi.DlnaServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -65,7 +65,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dlna_profileinfos**
-> list[DlnaDeviceProfileInfo] get_dlna_profileinfos()
+> list[EmbyDlnaProfilesDlnaProfile] get_dlna_profileinfos()
 
 Gets a list of profiles
 
@@ -101,7 +101,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[DlnaDeviceProfileInfo]**](DlnaDeviceProfileInfo.md)
+[**list[EmbyDlnaProfilesDlnaProfile]**](EmbyDlnaProfilesDlnaProfile.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dlna_profiles_by_id**
-> DlnaDeviceProfile get_dlna_profiles_by_id(id)
+> EmbyDlnaProfilesDlnaProfile get_dlna_profiles_by_id(id)
 
 Gets a single profile
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DlnaDeviceProfile**](DlnaDeviceProfile.md)
+[**EmbyDlnaProfilesDlnaProfile**](EmbyDlnaProfilesDlnaProfile.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dlna_profiles_default**
-> DlnaDeviceProfile get_dlna_profiles_default()
+> EmbyDlnaProfilesDlnaProfile get_dlna_profiles_default()
 
 Gets the default profile
 
@@ -205,7 +205,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**DlnaDeviceProfile**](DlnaDeviceProfile.md)
+[**EmbyDlnaProfilesDlnaProfile**](EmbyDlnaProfilesDlnaProfile.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.DlnaServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.DlnaDeviceProfile() # DlnaDeviceProfile | DeviceProfile: 
+body = embyapi.EmbyDlnaProfilesDlnaProfile() # EmbyDlnaProfilesDlnaProfile | DlnaProfile: 
 
 try:
     # Creates a profile
@@ -254,7 +254,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DlnaDeviceProfile**](DlnaDeviceProfile.md)| DeviceProfile:  | 
+ **body** | [**EmbyDlnaProfilesDlnaProfile**](EmbyDlnaProfilesDlnaProfile.md)| DlnaProfile:  | 
 
 ### Return type
 
@@ -294,7 +294,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.DlnaServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.DlnaDeviceProfile() # DlnaDeviceProfile | DeviceProfile: 
+body = embyapi.EmbyDlnaProfilesDlnaProfile() # EmbyDlnaProfilesDlnaProfile | DlnaProfile: 
 id = 'id_example' # str | 
 
 try:
@@ -308,7 +308,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DlnaDeviceProfile**](DlnaDeviceProfile.md)| DeviceProfile:  | 
+ **body** | [**EmbyDlnaProfilesDlnaProfile**](EmbyDlnaProfilesDlnaProfile.md)| DlnaProfile:  | 
  **id** | **str**|  | 
 
 ### Return type

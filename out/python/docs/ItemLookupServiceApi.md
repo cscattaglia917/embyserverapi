@@ -1,6 +1,6 @@
 # embyapi.ItemLookupServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 Gets a remote image
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -87,8 +87,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.ItemLookupServiceApi()
+api_instance = embyapi.ItemLookupServiceApi(embyapi.ApiClient(configuration))
 image_url = 'image_url_example' # str | The image url
 provider_name = 'provider_name_example' # str | 
 
@@ -112,7 +118,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -254,7 +260,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.ItemLookupServiceApi(embyapi.ApiClient(configuration))
-body = embyapi.ProvidersRemoteSearchQueryProvidersBoxSetInfo() # ProvidersRemoteSearchQueryProvidersBoxSetInfo | RemoteSearchQuery`1: 
+body = embyapi.ProvidersRemoteSearchQueryProvidersItemLookupInfo() # ProvidersRemoteSearchQueryProvidersItemLookupInfo | RemoteSearchQuery`1: 
 
 try:
     api_response = api_instance.post_items_remotesearch_boxset(body)
@@ -267,7 +273,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProvidersRemoteSearchQueryProvidersBoxSetInfo**](ProvidersRemoteSearchQueryProvidersBoxSetInfo.md)| RemoteSearchQuery&#x60;1:  | 
+ **body** | [**ProvidersRemoteSearchQueryProvidersItemLookupInfo**](ProvidersRemoteSearchQueryProvidersItemLookupInfo.md)| RemoteSearchQuery&#x60;1:  | 
 
 ### Return type
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day_of_week** | **str** |  | [optional] 
+**day_of_week** | [**ConfigurationDynamicDayOfWeek**](ConfigurationDynamicDayOfWeek.md) |  | [optional] 
 **start_hour** | **float** |  | [optional] 
 **end_hour** | **float** |  | [optional] 
 

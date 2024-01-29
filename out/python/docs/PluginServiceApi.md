@@ -1,6 +1,6 @@
 # embyapi.PluginServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_plugins_by_id_configuration**](PluginServiceApi.md#get_plugins_by_id_configuration) | **GET** /Plugins/{Id}/Configuration | Gets a plugin&#x27;s configuration
 [**get_plugins_by_id_thumb**](PluginServiceApi.md#get_plugins_by_id_thumb) | **GET** /Plugins/{Id}/Thumb | Gets a plugin thumb image
 [**post_plugins_by_id_configuration**](PluginServiceApi.md#post_plugins_by_id_configuration) | **POST** /Plugins/{Id}/Configuration | Updates a plugin&#x27;s configuration
+[**post_plugins_by_id_delete**](PluginServiceApi.md#post_plugins_by_id_delete) | **POST** /Plugins/{Id}/Delete | Uninstalls a plugin
 
 # **delete_plugins_by_id**
 > delete_plugins_by_id(id)
@@ -264,6 +265,59 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/octet-stream
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_plugins_by_id_delete**
+> post_plugins_by_id_delete(id)
+
+Uninstalls a plugin
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.PluginServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Plugin Id
+
+try:
+    # Uninstalls a plugin
+    api_instance.post_plugins_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling PluginServiceApi->post_plugins_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Plugin Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

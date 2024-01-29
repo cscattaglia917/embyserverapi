@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **minor** | **int** |  | [optional] 
 **build** | **int** |  | [optional] 
 **revision** | **int** |  | [optional] 
-**major_revision** | **object** |  | [optional] 
-**minor_revision** | **object** |  | [optional] 
+**major_revision** | **int** |  | [optional] 
+**minor_revision** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,6 +1,6 @@
 # embyapi.PackageServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_packages_by_name**](PackageServiceApi.md#get_packages_by_name) | **GET** /Packages/{Name} | Gets a package, by name or assembly guid
 [**get_packages_updates**](PackageServiceApi.md#get_packages_updates) | **GET** /Packages/Updates | Gets available package updates for currently installed packages
 [**post_packages_installed_by_name**](PackageServiceApi.md#post_packages_installed_by_name) | **POST** /Packages/Installed/{Name} | Installs a package
+[**post_packages_installing_by_id_delete**](PackageServiceApi.md#post_packages_installing_by_id_delete) | **POST** /Packages/Installing/{Id}/Delete | Cancels a package installation
 
 # **delete_packages_installing_by_id**
 > delete_packages_installing_by_id(id)
@@ -259,7 +260,7 @@ api_instance = embyapi.PackageServiceApi(embyapi.ApiClient(configuration))
 name = 'name_example' # str | Package name
 assembly_guid = 'assembly_guid_example' # str | Guid of the associated assembly (optional)
 version = 'version_example' # str | Optional version. Defaults to latest version. (optional)
-update_class = 'update_class_example' # str | Optional update class (Dev, Beta, Release). Defaults to Release. (optional)
+update_class = embyapi.UpdatesPackageVersionClass() # UpdatesPackageVersionClass | Optional update class (Dev, Beta, Release). Defaults to Release. (optional)
 
 try:
     # Installs a package
@@ -275,7 +276,60 @@ Name | Type | Description  | Notes
  **name** | **str**| Package name | 
  **assembly_guid** | **str**| Guid of the associated assembly | [optional] 
  **version** | **str**| Optional version. Defaults to latest version. | [optional] 
- **update_class** | **str**| Optional update class (Dev, Beta, Release). Defaults to Release. | [optional] 
+ **update_class** | [**UpdatesPackageVersionClass**](.md)| Optional update class (Dev, Beta, Release). Defaults to Release. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_packages_installing_by_id_delete**
+> post_packages_installing_by_id_delete(id)
+
+Cancels a package installation
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.PackageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Installation Id
+
+try:
+    # Cancels a package installation
+    api_instance.post_packages_installing_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling PackageServiceApi->post_packages_installing_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Installation Id | 
 
 ### Return type
 

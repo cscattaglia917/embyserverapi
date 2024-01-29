@@ -1,6 +1,6 @@
 # embyapi.ImageServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -43,11 +43,16 @@ Method | HTTP request | Description
 [**head_studios_by_name_images_by_type_by_index**](ImageServiceApi.md#head_studios_by_name_images_by_type_by_index) | **HEAD** /Studios/{Name}/Images/{Type}/{Index} | 
 [**head_users_by_id_images_by_type**](ImageServiceApi.md#head_users_by_id_images_by_type) | **HEAD** /Users/{Id}/Images/{Type} | 
 [**head_users_by_id_images_by_type_by_index**](ImageServiceApi.md#head_users_by_id_images_by_type_by_index) | **HEAD** /Users/{Id}/Images/{Type}/{Index} | 
-[**post_items_by_id_images_by_type**](ImageServiceApi.md#post_items_by_id_images_by_type) | **POST** /Items/{Id}/Images/{Type} | 
-[**post_items_by_id_images_by_type_by_index**](ImageServiceApi.md#post_items_by_id_images_by_type_by_index) | **POST** /Items/{Id}/Images/{Type}/{Index} | 
+[**post_items_by_id_images_by_type**](ImageServiceApi.md#post_items_by_id_images_by_type) | **POST** /Items/{Id}/Images/{Type} | Uploads an image for an item, must be base64 encoded.
+[**post_items_by_id_images_by_type_by_index**](ImageServiceApi.md#post_items_by_id_images_by_type_by_index) | **POST** /Items/{Id}/Images/{Type}/{Index} | Uploads an image for an item, must be base64 encoded.
+[**post_items_by_id_images_by_type_by_index_delete**](ImageServiceApi.md#post_items_by_id_images_by_type_by_index_delete) | **POST** /Items/{Id}/Images/{Type}/{Index}/Delete | 
 [**post_items_by_id_images_by_type_by_index_index**](ImageServiceApi.md#post_items_by_id_images_by_type_by_index_index) | **POST** /Items/{Id}/Images/{Type}/{Index}/Index | Updates the index for an item image
-[**post_users_by_id_images_by_type**](ImageServiceApi.md#post_users_by_id_images_by_type) | **POST** /Users/{Id}/Images/{Type} | 
-[**post_users_by_id_images_by_type_by_index**](ImageServiceApi.md#post_users_by_id_images_by_type_by_index) | **POST** /Users/{Id}/Images/{Type}/{Index} | 
+[**post_items_by_id_images_by_type_by_index_url**](ImageServiceApi.md#post_items_by_id_images_by_type_by_index_url) | **POST** /Items/{Id}/Images/{Type}/{Index}/Url | Updates the index for an item image
+[**post_items_by_id_images_by_type_delete**](ImageServiceApi.md#post_items_by_id_images_by_type_delete) | **POST** /Items/{Id}/Images/{Type}/Delete | 
+[**post_users_by_id_images_by_type**](ImageServiceApi.md#post_users_by_id_images_by_type) | **POST** /Users/{Id}/Images/{Type} | Uploads an image for an item, must be base64 encoded.
+[**post_users_by_id_images_by_type_by_index**](ImageServiceApi.md#post_users_by_id_images_by_type_by_index) | **POST** /Users/{Id}/Images/{Type}/{Index} | Uploads an image for an item, must be base64 encoded.
+[**post_users_by_id_images_by_type_by_index_delete**](ImageServiceApi.md#post_users_by_id_images_by_type_by_index_delete) | **POST** /Users/{Id}/Images/{Type}/{Index}/Delete | 
+[**post_users_by_id_images_by_type_delete**](ImageServiceApi.md#post_users_by_id_images_by_type_delete) | **POST** /Users/{Id}/Images/{Type}/Delete | 
 
 # **delete_items_by_id_images_by_type**
 > delete_items_by_id_images_by_type(id, type, index=index)
@@ -73,7 +78,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -87,7 +92,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -129,7 +134,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -143,7 +148,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -185,7 +190,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
@@ -199,7 +204,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -241,7 +246,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
@@ -255,7 +260,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -274,7 +279,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_artists_by_name_images_by_type**
-> get_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -291,7 +296,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -306,10 +311,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_artists_by_name_images_by_type: %s\n" % e)
 ```
@@ -319,7 +325,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -334,6 +340,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -352,7 +359,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_artists_by_name_images_by_type_by_index**
-> get_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -369,7 +376,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -385,9 +392,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_artists_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -397,7 +405,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -413,6 +421,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -430,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_gamegenres_by_name_images_by_type**
-> get_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -447,7 +456,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -462,10 +471,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_gamegenres_by_name_images_by_type: %s\n" % e)
 ```
@@ -475,7 +485,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -490,6 +500,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -508,7 +519,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_gamegenres_by_name_images_by_type_by_index**
-> get_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -525,7 +536,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -541,9 +552,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_gamegenres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -553,7 +565,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -569,6 +581,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -586,7 +599,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_genres_by_name_images_by_type**
-> get_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -603,7 +616,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -618,10 +631,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_genres_by_name_images_by_type: %s\n" % e)
 ```
@@ -631,7 +645,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -646,6 +660,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -664,7 +679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_genres_by_name_images_by_type_by_index**
-> get_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -681,7 +696,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -697,9 +712,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_genres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -709,7 +725,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -725,6 +741,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -796,7 +813,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_items_by_id_images_by_type**
-> get_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -813,7 +830,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -828,10 +845,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_items_by_id_images_by_type: %s\n" % e)
 ```
@@ -841,7 +859,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -856,6 +874,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -874,7 +893,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_items_by_id_images_by_type_by_index**
-> get_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -891,7 +910,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -907,9 +926,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_items_by_id_images_by_type_by_index: %s\n" % e)
 ```
@@ -919,7 +939,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -935,6 +955,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -952,7 +973,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount**
-> get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer)
+> get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -975,7 +996,7 @@ tag = 'tag_example' # str | Optional. Supply the cache tag from the item object 
 format = 'format_example' # str | Determines the output foramt of the image - original,gif,jpg,png
 percent_played = 1.2 # float | Optional percent to render for the percent played overlay
 unplayed_count = 56 # int | Optional unplayed count overlay to render
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 width = 56 # int | The fixed image width to return. (optional)
 height = 56 # int | The fixed image height to return. (optional)
@@ -985,9 +1006,10 @@ enable_image_enhancers = true # bool | Enable or disable image enhancers such as
 add_played_indicator = true # bool | Optional. Add a played indicator (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount: %s\n" % e)
 ```
@@ -1003,7 +1025,7 @@ Name | Type | Description  | Notes
  **format** | **str**| Determines the output foramt of the image - original,gif,jpg,png | 
  **percent_played** | **float**| Optional percent to render for the percent played overlay | 
  **unplayed_count** | **int**| Optional unplayed count overlay to render | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **width** | **int**| The fixed image width to return. | [optional] 
  **height** | **int**| The fixed image height to return. | [optional] 
@@ -1013,6 +1035,7 @@ Name | Type | Description  | Notes
  **add_played_indicator** | **bool**| Optional. Add a played indicator | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1030,7 +1053,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_musicgenres_by_name_images_by_type**
-> get_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1047,7 +1070,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1062,10 +1085,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_musicgenres_by_name_images_by_type: %s\n" % e)
 ```
@@ -1075,7 +1099,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1090,6 +1114,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1108,7 +1133,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_musicgenres_by_name_images_by_type_by_index**
-> get_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1125,7 +1150,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1141,9 +1166,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_musicgenres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -1153,7 +1179,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1169,6 +1195,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1186,7 +1213,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_persons_by_name_images_by_type**
-> get_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1203,7 +1230,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1218,10 +1245,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_persons_by_name_images_by_type: %s\n" % e)
 ```
@@ -1231,7 +1259,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1246,6 +1274,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1264,7 +1293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_persons_by_name_images_by_type_by_index**
-> get_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1281,7 +1310,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1297,9 +1326,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_persons_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -1309,7 +1339,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1325,6 +1355,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1342,7 +1373,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_studios_by_name_images_by_type**
-> get_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1359,7 +1390,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1374,10 +1405,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_studios_by_name_images_by_type: %s\n" % e)
 ```
@@ -1387,7 +1419,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1402,6 +1434,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1420,7 +1453,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_studios_by_name_images_by_type_by_index**
-> get_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1437,7 +1470,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1453,9 +1486,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_studios_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -1465,7 +1499,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1481,6 +1515,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1498,7 +1533,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users_by_id_images_by_type**
-> get_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> get_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1515,7 +1550,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1530,10 +1565,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.get_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.get_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_users_by_id_images_by_type: %s\n" % e)
 ```
@@ -1543,7 +1579,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1558,6 +1594,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1576,7 +1613,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users_by_id_images_by_type_by_index**
-> get_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> get_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1593,7 +1630,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1609,9 +1646,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.get_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.get_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->get_users_by_id_images_by_type_by_index: %s\n" % e)
 ```
@@ -1621,7 +1659,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1637,6 +1675,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1654,7 +1693,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_artists_by_name_images_by_type**
-> head_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1671,7 +1710,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1686,10 +1725,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_artists_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_artists_by_name_images_by_type: %s\n" % e)
 ```
@@ -1699,7 +1739,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1714,6 +1754,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1732,7 +1773,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_artists_by_name_images_by_type_by_index**
-> head_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1749,7 +1790,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1765,9 +1806,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_artists_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_artists_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -1777,7 +1819,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1793,6 +1835,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1810,7 +1853,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_gamegenres_by_name_images_by_type**
-> head_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1827,7 +1870,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1842,10 +1885,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_gamegenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_gamegenres_by_name_images_by_type: %s\n" % e)
 ```
@@ -1855,7 +1899,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -1870,6 +1914,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -1888,7 +1933,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_gamegenres_by_name_images_by_type_by_index**
-> head_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -1905,7 +1950,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -1921,9 +1966,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_gamegenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_gamegenres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -1933,7 +1979,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -1949,6 +1995,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -1966,7 +2013,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_genres_by_name_images_by_type**
-> head_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -1983,7 +2030,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -1998,10 +2045,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_genres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_genres_by_name_images_by_type: %s\n" % e)
 ```
@@ -2011,7 +2059,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2026,6 +2074,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2044,7 +2093,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_genres_by_name_images_by_type_by_index**
-> head_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2061,7 +2110,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2077,9 +2126,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_genres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_genres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -2089,7 +2139,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2105,6 +2155,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2122,7 +2173,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_items_by_id_images_by_type**
-> head_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -2139,7 +2190,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2154,10 +2205,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_items_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_items_by_id_images_by_type: %s\n" % e)
 ```
@@ -2167,7 +2219,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2182,6 +2234,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2200,7 +2253,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_items_by_id_images_by_type_by_index**
-> head_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2217,7 +2270,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2233,9 +2286,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_items_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_items_by_id_images_by_type_by_index: %s\n" % e)
 ```
@@ -2245,7 +2299,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2261,6 +2315,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2278,7 +2333,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount**
-> head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer)
+> head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2301,7 +2356,7 @@ tag = 'tag_example' # str | Optional. Supply the cache tag from the item object 
 format = 'format_example' # str | Determines the output foramt of the image - original,gif,jpg,png
 percent_played = 1.2 # float | Optional percent to render for the percent played overlay
 unplayed_count = 56 # int | Optional unplayed count overlay to render
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 width = 56 # int | The fixed image width to return. (optional)
 height = 56 # int | The fixed image height to return. (optional)
@@ -2311,9 +2366,10 @@ enable_image_enhancers = true # bool | Enable or disable image enhancers such as
 add_played_indicator = true # bool | Optional. Add a played indicator (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount(id, max_width, max_height, tag, format, percent_played, unplayed_count, type, index, width=width, height=height, quality=quality, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, add_played_indicator=add_played_indicator, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_items_by_id_images_by_type_by_index_by_tag_by_format_by_maxwidth_by_maxheight_by_percentplayed_by_unplayedcount: %s\n" % e)
 ```
@@ -2329,7 +2385,7 @@ Name | Type | Description  | Notes
  **format** | **str**| Determines the output foramt of the image - original,gif,jpg,png | 
  **percent_played** | **float**| Optional percent to render for the percent played overlay | 
  **unplayed_count** | **int**| Optional unplayed count overlay to render | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **width** | **int**| The fixed image width to return. | [optional] 
  **height** | **int**| The fixed image height to return. | [optional] 
@@ -2339,6 +2395,7 @@ Name | Type | Description  | Notes
  **add_played_indicator** | **bool**| Optional. Add a played indicator | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2356,7 +2413,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_musicgenres_by_name_images_by_type**
-> head_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -2373,7 +2430,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2388,10 +2445,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_musicgenres_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_musicgenres_by_name_images_by_type: %s\n" % e)
 ```
@@ -2401,7 +2459,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2416,6 +2474,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2434,7 +2493,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_musicgenres_by_name_images_by_type_by_index**
-> head_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2451,7 +2510,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2467,9 +2526,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_musicgenres_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_musicgenres_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -2479,7 +2539,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2495,6 +2555,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2512,7 +2573,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_persons_by_name_images_by_type**
-> head_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -2529,7 +2590,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2544,10 +2605,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_persons_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_persons_by_name_images_by_type: %s\n" % e)
 ```
@@ -2557,7 +2619,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2572,6 +2634,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2590,7 +2653,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_persons_by_name_images_by_type_by_index**
-> head_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2607,7 +2670,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2623,9 +2686,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_persons_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_persons_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -2635,7 +2699,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2651,6 +2715,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2668,7 +2733,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_studios_by_name_images_by_type**
-> head_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -2685,7 +2750,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2700,10 +2765,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_studios_by_name_images_by_type(name, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_studios_by_name_images_by_type: %s\n" % e)
 ```
@@ -2713,7 +2779,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2728,6 +2794,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2746,7 +2813,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_studios_by_name_images_by_type_by_index**
-> head_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2763,7 +2830,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 name = 'name_example' # str | Item name
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2779,9 +2846,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_studios_by_name_images_by_type_by_index(name, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_studios_by_name_images_by_type_by_index: %s\n" % e)
 ```
@@ -2791,7 +2859,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Item name | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2807,6 +2875,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2824,7 +2893,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_users_by_id_images_by_type**
-> head_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+> head_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 
 
 
@@ -2841,7 +2910,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
 width = 56 # int | The fixed image width to return. (optional)
@@ -2856,10 +2925,11 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 index = 56 # int | Image Index (optional)
 
 try:
-    api_instance.head_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, index=index)
+    api_instance.head_users_by_id_images_by_type(id, type, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_users_by_id_images_by_type: %s\n" % e)
 ```
@@ -2869,7 +2939,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
  **width** | **int**| The fixed image width to return. | [optional] 
@@ -2884,6 +2954,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -2902,7 +2973,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **head_users_by_id_images_by_type_by_index**
-> head_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+> head_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 
 
 
@@ -2919,7 +2990,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi()
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 max_width = 56 # int | The maximum image width to return. (optional)
 max_height = 56 # int | The maximum image height to return. (optional)
@@ -2935,9 +3006,10 @@ percent_played = 1.2 # float | Optional percent to render for the percent played
 unplayed_count = 56 # int | Optional unplayed count overlay to render (optional)
 background_color = 'background_color_example' # str | Optional. Apply a background color for transparent images. (optional)
 foreground_layer = 'foreground_layer_example' # str | Optional. Apply a foreground layer on top of the image. (optional)
+auto_orient = true # bool | Set to true to force normalization of orientation in the event the renderer does not support it. (optional)
 
 try:
-    api_instance.head_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer)
+    api_instance.head_users_by_id_images_by_type_by_index(id, type, index, max_width=max_width, max_height=max_height, width=width, height=height, quality=quality, tag=tag, crop_whitespace=crop_whitespace, enable_image_enhancers=enable_image_enhancers, format=format, add_played_indicator=add_played_indicator, percent_played=percent_played, unplayed_count=unplayed_count, background_color=background_color, foreground_layer=foreground_layer, auto_orient=auto_orient)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->head_users_by_id_images_by_type_by_index: %s\n" % e)
 ```
@@ -2947,7 +3019,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **max_width** | **int**| The maximum image width to return. | [optional] 
  **max_height** | **int**| The maximum image height to return. | [optional] 
@@ -2963,6 +3035,7 @@ Name | Type | Description  | Notes
  **unplayed_count** | **int**| Optional unplayed count overlay to render | [optional] 
  **background_color** | **str**| Optional. Apply a background color for transparent images. | [optional] 
  **foreground_layer** | **str**| Optional. Apply a foreground layer on top of the image. | [optional] 
+ **auto_orient** | **bool**| Set to true to force normalization of orientation in the event the renderer does not support it. | [optional] 
 
 ### Return type
 
@@ -2982,7 +3055,7 @@ No authorization required
 # **post_items_by_id_images_by_type**
 > post_items_by_id_images_by_type(body, id, type, index=index)
 
-
+Uploads an image for an item, must be base64 encoded.
 
 Requires authentication as administrator
 
@@ -3004,10 +3077,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
+    # Uploads an image for an item, must be base64 encoded.
     api_instance.post_items_by_id_images_by_type(body, id, type, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->post_items_by_id_images_by_type: %s\n" % e)
@@ -3019,7 +3093,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -3032,7 +3106,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/octet-stream
+ - **Content-Type**: image/png
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3040,7 +3114,7 @@ void (empty response body)
 # **post_items_by_id_images_by_type_by_index**
 > post_items_by_id_images_by_type_by_index(body, id, type, index)
 
-
+Uploads an image for an item, must be base64 encoded.
 
 Requires authentication as administrator
 
@@ -3062,10 +3136,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
+    # Uploads an image for an item, must be base64 encoded.
     api_instance.post_items_by_id_images_by_type_by_index(body, id, type, index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->post_items_by_id_images_by_type_by_index: %s\n" % e)
@@ -3077,7 +3152,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3090,7 +3165,63 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/octet-stream
+ - **Content-Type**: image/png
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_items_by_id_images_by_type_by_index_delete**
+> post_items_by_id_images_by_type_by_index_delete(id, type, index)
+
+
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Item Id
+type = embyapi.ImageType() # ImageType | Image Type
+index = 56 # int | Image Index
+
+try:
+    api_instance.post_items_by_id_images_by_type_by_index_delete(id, type, index)
+except ApiException as e:
+    print("Exception when calling ImageServiceApi->post_items_by_id_images_by_type_by_index_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Item Id | 
+ **type** | [**ImageType**](.md)| Image Type | 
+ **index** | **int**| Image Index | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3119,7 +3250,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 id = 'id_example' # str | Item Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 new_index = 56 # int | The new image index
 
@@ -3135,9 +3266,124 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Item Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
  **new_index** | **int**| The new image index | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_items_by_id_images_by_type_by_index_url**
+> post_items_by_id_images_by_type_by_index_url(id, type, index, url)
+
+Updates the index for an item image
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Item Id
+type = embyapi.ImageType() # ImageType | Image Type
+index = 56 # int | Image Index
+url = 'url_example' # str | The url for the new image
+
+try:
+    # Updates the index for an item image
+    api_instance.post_items_by_id_images_by_type_by_index_url(id, type, index, url)
+except ApiException as e:
+    print("Exception when calling ImageServiceApi->post_items_by_id_images_by_type_by_index_url: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Item Id | 
+ **type** | [**ImageType**](.md)| Image Type | 
+ **index** | **int**| Image Index | 
+ **url** | **str**| The url for the new image | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_items_by_id_images_by_type_delete**
+> post_items_by_id_images_by_type_delete(id, type, index=index)
+
+
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Item Id
+type = embyapi.ImageType() # ImageType | Image Type
+index = 56 # int | Image Index (optional)
+
+try:
+    api_instance.post_items_by_id_images_by_type_delete(id, type, index=index)
+except ApiException as e:
+    print("Exception when calling ImageServiceApi->post_items_by_id_images_by_type_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Item Id | 
+ **type** | [**ImageType**](.md)| Image Type | 
+ **index** | **int**| Image Index | [optional] 
 
 ### Return type
 
@@ -3157,7 +3403,7 @@ void (empty response body)
 # **post_users_by_id_images_by_type**
 > post_users_by_id_images_by_type(body, id, type, index=index)
 
-
+Uploads an image for an item, must be base64 encoded.
 
 Requires authentication as user
 
@@ -3179,10 +3425,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index (optional)
 
 try:
+    # Uploads an image for an item, must be base64 encoded.
     api_instance.post_users_by_id_images_by_type(body, id, type, index=index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->post_users_by_id_images_by_type: %s\n" % e)
@@ -3194,7 +3441,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | [optional] 
 
 ### Return type
@@ -3215,7 +3462,7 @@ void (empty response body)
 # **post_users_by_id_images_by_type_by_index**
 > post_users_by_id_images_by_type_by_index(body, id, type, index)
 
-
+Uploads an image for an item, must be base64 encoded.
 
 Requires authentication as user
 
@@ -3237,10 +3484,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.Object() # Object | Binary stream
 id = 'id_example' # str | User Id
-type = 'type_example' # str | Image Type
+type = embyapi.ImageType() # ImageType | Image Type
 index = 56 # int | Image Index
 
 try:
+    # Uploads an image for an item, must be base64 encoded.
     api_instance.post_users_by_id_images_by_type_by_index(body, id, type, index)
 except ApiException as e:
     print("Exception when calling ImageServiceApi->post_users_by_id_images_by_type_by_index: %s\n" % e)
@@ -3252,7 +3500,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **Object**| Binary stream | 
  **id** | **str**| User Id | 
- **type** | **str**| Image Type | 
+ **type** | [**ImageType**](.md)| Image Type | 
  **index** | **int**| Image Index | 
 
 ### Return type
@@ -3266,6 +3514,118 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/octet-stream
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_users_by_id_images_by_type_by_index_delete**
+> post_users_by_id_images_by_type_by_index_delete(id, type, index)
+
+
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | User Id
+type = embyapi.ImageType() # ImageType | Image Type
+index = 56 # int | Image Index
+
+try:
+    api_instance.post_users_by_id_images_by_type_by_index_delete(id, type, index)
+except ApiException as e:
+    print("Exception when calling ImageServiceApi->post_users_by_id_images_by_type_by_index_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User Id | 
+ **type** | [**ImageType**](.md)| Image Type | 
+ **index** | **int**| Image Index | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_users_by_id_images_by_type_delete**
+> post_users_by_id_images_by_type_delete(id, type, index=index)
+
+
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.ImageServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | User Id
+type = embyapi.ImageType() # ImageType | Image Type
+index = 56 # int | Image Index (optional)
+
+try:
+    api_instance.post_users_by_id_images_by_type_delete(id, type, index=index)
+except ApiException as e:
+    print("Exception when calling ImageServiceApi->post_users_by_id_images_by_type_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User Id | 
+ **type** | [**ImageType**](.md)| Image Type | 
+ **index** | **int**| Image Index | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

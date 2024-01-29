@@ -17,8 +17,9 @@ Name | Type | Description | Notes
 **enable_direct_stream** | **bool** |  | [optional] 
 **enable_transcoding** | **bool** |  | [optional] 
 **allow_video_stream_copy** | **bool** |  | [optional] 
+**allow_interlaced_video_stream_copy** | **bool** |  | [optional] 
 **allow_audio_stream_copy** | **bool** |  | [optional] 
-**direct_play_protocols** | **list[str]** |  | [optional] 
+**direct_play_protocols** | [**list[MediaInfoMediaProtocol]**](MediaInfoMediaProtocol.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

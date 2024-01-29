@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **movie_prefix** | **str** |  | [optional] 
 **preferred_language** | **str** |  | [optional] 
 **user_agent** | **str** |  | [optional] 
+**data_version** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

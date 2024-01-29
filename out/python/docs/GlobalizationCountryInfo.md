@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
+**english_name** | **str** |  | [optional] 
 **two_letter_iso_region_name** | **str** |  | [optional] 
 **three_letter_iso_region_name** | **str** |  | [optional] 
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **items** | [**list[BaseItemDto]**](BaseItemDto.md) |  | [optional] 
-**recommendation_type** | **str** |  | [optional] 
+**recommendation_type** | [**RecommendationType**](RecommendationType.md) |  | [optional] 
 **baseline_item_name** | **str** |  | [optional] 
 **category_id** | **int** |  | [optional] 
 

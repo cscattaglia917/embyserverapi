@@ -1,15 +1,18 @@
 # embyapi.SystemServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_system_endpoint**](SystemServiceApi.md#get_system_endpoint) | **GET** /System/Endpoint | Gets information about the request endpoint
 [**get_system_info**](SystemServiceApi.md#get_system_info) | **GET** /System/Info | Gets information about the server
 [**get_system_info_public**](SystemServiceApi.md#get_system_info_public) | **GET** /System/Info/Public | Gets public information about the server
-[**get_system_logs**](SystemServiceApi.md#get_system_logs) | **GET** /System/Logs | Gets a list of available server log files
-[**get_system_logs_log**](SystemServiceApi.md#get_system_logs_log) | **GET** /System/Logs/Log | Gets a log file
+[**get_system_logs_by_name**](SystemServiceApi.md#get_system_logs_by_name) | **GET** /System/Logs/{Name} | Gets a log file
+[**get_system_logs_by_name_lines**](SystemServiceApi.md#get_system_logs_by_name_lines) | **GET** /System/Logs/{Name}/Lines | Gets a log file
+[**get_system_logs_query**](SystemServiceApi.md#get_system_logs_query) | **GET** /System/Logs/Query | Gets a list of available server log files
 [**get_system_ping**](SystemServiceApi.md#get_system_ping) | **GET** /System/Ping | 
+[**get_system_releasenotes**](SystemServiceApi.md#get_system_releasenotes) | **GET** /System/ReleaseNotes | Gets release notes
+[**get_system_releasenotes_versions**](SystemServiceApi.md#get_system_releasenotes_versions) | **GET** /System/ReleaseNotes/Versions | Gets release notes
 [**get_system_wakeonlaninfo**](SystemServiceApi.md#get_system_wakeonlaninfo) | **GET** /System/WakeOnLanInfo | Gets wake on lan information
 [**post_system_ping**](SystemServiceApi.md#post_system_ping) | **POST** /System/Ping | 
 [**post_system_restart**](SystemServiceApi.md#post_system_restart) | **POST** /System/Restart | Restarts the application, if needed
@@ -159,10 +162,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_system_logs**
-> list[LogFile] get_system_logs()
+# **get_system_logs_by_name**
+> get_system_logs_by_name(name, sanitize=sanitize)
 
-Gets a list of available server log files
+Gets a log file
 
 Requires authentication as administrator
 
@@ -182,21 +185,26 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.SystemServiceApi(embyapi.ApiClient(configuration))
+name = 'name_example' # str | The log file name.
+sanitize = true # bool | Return sanitized log (optional)
 
 try:
-    # Gets a list of available server log files
-    api_response = api_instance.get_system_logs()
-    pprint(api_response)
+    # Gets a log file
+    api_instance.get_system_logs_by_name(name, sanitize=sanitize)
 except ApiException as e:
-    print("Exception when calling SystemServiceApi->get_system_logs: %s\n" % e)
+    print("Exception when calling SystemServiceApi->get_system_logs_by_name: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The log file name. | 
+ **sanitize** | **bool**| Return sanitized log | [optional] 
 
 ### Return type
 
-[**list[LogFile]**](LogFile.md)
+void (empty response body)
 
 ### Authorization
 
@@ -205,12 +213,12 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_system_logs_log**
-> get_system_logs_log(name)
+# **get_system_logs_by_name_lines**
+> QueryResultString get_system_logs_by_name_lines(name)
 
 Gets a log file
 
@@ -236,9 +244,10 @@ name = 'name_example' # str | The log file name.
 
 try:
     # Gets a log file
-    api_instance.get_system_logs_log(name)
+    api_response = api_instance.get_system_logs_by_name_lines(name)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SystemServiceApi->get_system_logs_log: %s\n" % e)
+    print("Exception when calling SystemServiceApi->get_system_logs_by_name_lines: %s\n" % e)
 ```
 
 ### Parameters
@@ -249,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**QueryResultString**](QueryResultString.md)
 
 ### Authorization
 
@@ -258,7 +267,63 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_logs_query**
+> QueryResultLogFile get_system_logs_query(start_index=start_index, limit=limit)
+
+Gets a list of available server log files
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SystemServiceApi(embyapi.ApiClient(configuration))
+start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+limit = 56 # int | Optional. The maximum number of records to return (optional)
+
+try:
+    # Gets a list of available server log files
+    api_response = api_instance.get_system_logs_query(start_index=start_index, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemServiceApi->get_system_logs_query: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
+ **limit** | **int**| Optional. The maximum number of records to return | [optional] 
+
+### Return type
+
+[**QueryResultLogFile**](QueryResultLogFile.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -301,6 +366,106 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_releasenotes**
+> UpdatesPackageVersionInfo get_system_releasenotes()
+
+Gets release notes
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SystemServiceApi(embyapi.ApiClient(configuration))
+
+try:
+    # Gets release notes
+    api_response = api_instance.get_system_releasenotes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemServiceApi->get_system_releasenotes: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UpdatesPackageVersionInfo**](UpdatesPackageVersionInfo.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_releasenotes_versions**
+> list[UpdatesPackageVersionInfo] get_system_releasenotes_versions()
+
+Gets release notes
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SystemServiceApi(embyapi.ApiClient(configuration))
+
+try:
+    # Gets release notes
+    api_response = api_instance.get_system_releasenotes_versions()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemServiceApi->get_system_releasenotes_versions: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[UpdatesPackageVersionInfo]**](UpdatesPackageVersionInfo.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

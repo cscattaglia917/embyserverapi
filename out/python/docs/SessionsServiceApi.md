@@ -1,6 +1,6 @@
 # embyapi.SessionsServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**get_auth_keys**](SessionsServiceApi.md#get_auth_keys) | **GET** /Auth/Keys | 
 [**get_auth_providers**](SessionsServiceApi.md#get_auth_providers) | **GET** /Auth/Providers | 
 [**get_sessions**](SessionsServiceApi.md#get_sessions) | **GET** /Sessions | Gets a list of sessions
+[**get_sessions_playqueue**](SessionsServiceApi.md#get_sessions_playqueue) | **GET** /Sessions/PlayQueue | Gets a the current play queue from a session
 [**post_auth_keys**](SessionsServiceApi.md#post_auth_keys) | **POST** /Auth/Keys | 
+[**post_auth_keys_by_key_delete**](SessionsServiceApi.md#post_auth_keys_by_key_delete) | **POST** /Auth/Keys/{Key}/Delete | 
 [**post_sessions_by_id_command**](SessionsServiceApi.md#post_sessions_by_id_command) | **POST** /Sessions/{Id}/Command | Issues a system command to a client
 [**post_sessions_by_id_command_by_command**](SessionsServiceApi.md#post_sessions_by_id_command_by_command) | **POST** /Sessions/{Id}/Command/{Command} | Issues a system command to a client
 [**post_sessions_by_id_message**](SessionsServiceApi.md#post_sessions_by_id_message) | **POST** /Sessions/{Id}/Message | Issues a command to a client to display a message to the user
@@ -17,6 +19,7 @@ Method | HTTP request | Description
 [**post_sessions_by_id_playing_by_command**](SessionsServiceApi.md#post_sessions_by_id_playing_by_command) | **POST** /Sessions/{Id}/Playing/{Command} | Issues a playstate command to a client
 [**post_sessions_by_id_system_by_command**](SessionsServiceApi.md#post_sessions_by_id_system_by_command) | **POST** /Sessions/{Id}/System/{Command} | Issues a system command to a client
 [**post_sessions_by_id_users_by_userid**](SessionsServiceApi.md#post_sessions_by_id_users_by_userid) | **POST** /Sessions/{Id}/Users/{UserId} | Adds an additional user to a session
+[**post_sessions_by_id_users_by_userid_delete**](SessionsServiceApi.md#post_sessions_by_id_users_by_userid_delete) | **POST** /Sessions/{Id}/Users/{UserId}/Delete | Removes an additional user from a session
 [**post_sessions_by_id_viewing**](SessionsServiceApi.md#post_sessions_by_id_viewing) | **POST** /Sessions/{Id}/Viewing | Instructs a session to browse to an item or view
 [**post_sessions_capabilities**](SessionsServiceApi.md#post_sessions_capabilities) | **POST** /Sessions/Capabilities | Updates capabilities for a device
 [**post_sessions_capabilities_full**](SessionsServiceApi.md#post_sessions_capabilities_full) | **POST** /Sessions/Capabilities/Full | Updates capabilities for a device
@@ -130,7 +133,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_auth_keys**
-> get_auth_keys()
+> get_auth_keys(start_index=start_index, limit=limit)
 
 
 
@@ -152,15 +155,21 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
+start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+limit = 56 # int | Optional. The maximum number of records to return (optional)
 
 try:
-    api_instance.get_auth_keys()
+    api_instance.get_auth_keys(start_index=start_index, limit=limit)
 except ApiException as e:
     print("Exception when calling SessionsServiceApi->get_auth_keys: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
+ **limit** | **int**| Optional. The maximum number of records to return | [optional] 
 
 ### Return type
 
@@ -227,7 +236,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sessions**
-> list[SessionSessionInfo] get_sessions(controllable_by_user_id=controllable_by_user_id, device_id=device_id)
+> list[SessionSessionInfo] get_sessions(controllable_by_user_id=controllable_by_user_id, device_id=device_id, id=id)
 
 Gets a list of sessions
 
@@ -251,10 +260,11 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
 controllable_by_user_id = 'controllable_by_user_id_example' # str | Optional. Filter by sessions that a given user is allowed to remote control. (optional)
 device_id = 'device_id_example' # str | Optional. Filter by device id. (optional)
+id = 'id_example' # str | Optional. Filter by session id. (optional)
 
 try:
     # Gets a list of sessions
-    api_response = api_instance.get_sessions(controllable_by_user_id=controllable_by_user_id, device_id=device_id)
+    api_response = api_instance.get_sessions(controllable_by_user_id=controllable_by_user_id, device_id=device_id, id=id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SessionsServiceApi->get_sessions: %s\n" % e)
@@ -266,10 +276,67 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **controllable_by_user_id** | **str**| Optional. Filter by sessions that a given user is allowed to remote control. | [optional] 
  **device_id** | **str**| Optional. Filter by device id. | [optional] 
+ **id** | **str**| Optional. Filter by session id. | [optional] 
 
 ### Return type
 
 [**list[SessionSessionInfo]**](SessionSessionInfo.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sessions_playqueue**
+> QueryResultBaseItemDto get_sessions_playqueue(id=id, device_id=device_id)
+
+Gets a the current play queue from a session
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Optional. Filter by session id. (optional)
+device_id = 'device_id_example' # str | Optional. Filter by device id. (optional)
+
+try:
+    # Gets a the current play queue from a session
+    api_response = api_instance.get_sessions_playqueue(id=id, device_id=device_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SessionsServiceApi->get_sessions_playqueue: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Optional. Filter by session id. | [optional] 
+ **device_id** | **str**| Optional. Filter by device id. | [optional] 
+
+### Return type
+
+[**QueryResultBaseItemDto**](QueryResultBaseItemDto.md)
 
 ### Authorization
 
@@ -318,6 +385,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app** | **str**| App | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_auth_keys_by_key_delete**
+> post_auth_keys_by_key_delete(key)
+
+
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
+key = 'key_example' # str | Auth Key
+
+try:
+    api_instance.post_auth_keys_by_key_delete(key)
+except ApiException as e:
+    print("Exception when calling SessionsServiceApi->post_auth_keys_by_key_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **str**| Auth Key | 
 
 ### Return type
 
@@ -528,7 +647,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.PlayRequest() # PlayRequest | PlayRequest: 
 item_ids = [56] # list[int] | The ids of the items to play, comma delimited
-play_command = 'play_command_example' # str | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
+play_command = embyapi.PlayCommand() # PlayCommand | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
 id = 'id_example' # str | Session Id
 start_position_ticks = 789 # int | The starting position of the first item. (optional)
 
@@ -545,7 +664,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**PlayRequest**](PlayRequest.md)| PlayRequest:  | 
  **item_ids** | [**list[int]**](int.md)| The ids of the items to play, comma delimited | 
- **play_command** | **str**| The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
+ **play_command** | [**PlayCommand**](.md)| The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
  **id** | **str**| Session Id | 
  **start_position_ticks** | **int**| The starting position of the first item. | [optional] 
 
@@ -589,7 +708,7 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
 body = embyapi.PlaystateRequest() # PlaystateRequest | PlaystateRequest: 
 id = 'id_example' # str | Session Id
-command = 'command_example' # str | 
+command = embyapi.PlaystateCommand() # PlaystateCommand | 
 
 try:
     # Issues a playstate command to a client
@@ -604,7 +723,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**PlaystateRequest**](PlaystateRequest.md)| PlaystateRequest:  | 
  **id** | **str**| Session Id | 
- **command** | **str**|  | 
+ **command** | [**PlaystateCommand**](.md)|  | 
 
 ### Return type
 
@@ -731,6 +850,61 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_sessions_by_id_users_by_userid_delete**
+> post_sessions_by_id_users_by_userid_delete(id, user_id)
+
+Removes an additional user from a session
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.SessionsServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Session Id
+user_id = 'user_id_example' # str | UserId Id
+
+try:
+    # Removes an additional user from a session
+    api_instance.post_sessions_by_id_users_by_userid_delete(id, user_id)
+except ApiException as e:
+    print("Exception when calling SessionsServiceApi->post_sessions_by_id_users_by_userid_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Session Id | 
+ **user_id** | **str**| UserId Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_sessions_by_id_viewing**
 > post_sessions_by_id_viewing(id, item_type, item_id, item_name)
 
@@ -791,7 +965,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_sessions_capabilities**
-> post_sessions_capabilities(id, playable_media_types=playable_media_types, supported_commands=supported_commands, supports_media_control=supports_media_control, supports_sync=supports_sync, supports_persistent_identifier=supports_persistent_identifier)
+> post_sessions_capabilities(id, playable_media_types=playable_media_types, supported_commands=supported_commands, supports_media_control=supports_media_control, supports_sync=supports_sync)
 
 Updates capabilities for a device
 
@@ -818,11 +992,10 @@ playable_media_types = 'playable_media_types_example' # str | A list of playable
 supported_commands = 'supported_commands_example' # str | A list of supported remote control commands, comma delimited (optional)
 supports_media_control = true # bool | Determines whether media can be played remotely. (optional)
 supports_sync = true # bool | Determines whether sync is supported. (optional)
-supports_persistent_identifier = true # bool | Determines whether the device supports a unique identifier. (optional)
 
 try:
     # Updates capabilities for a device
-    api_instance.post_sessions_capabilities(id, playable_media_types=playable_media_types, supported_commands=supported_commands, supports_media_control=supports_media_control, supports_sync=supports_sync, supports_persistent_identifier=supports_persistent_identifier)
+    api_instance.post_sessions_capabilities(id, playable_media_types=playable_media_types, supported_commands=supported_commands, supports_media_control=supports_media_control, supports_sync=supports_sync)
 except ApiException as e:
     print("Exception when calling SessionsServiceApi->post_sessions_capabilities: %s\n" % e)
 ```
@@ -836,7 +1009,6 @@ Name | Type | Description  | Notes
  **supported_commands** | **str**| A list of supported remote control commands, comma delimited | [optional] 
  **supports_media_control** | **bool**| Determines whether media can be played remotely. | [optional] 
  **supports_sync** | **bool**| Determines whether sync is supported. | [optional] 
- **supports_persistent_identifier** | **bool**| Determines whether the device supports a unique identifier. | [optional] 
 
 ### Return type
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **container** | **str** |  | [optional] 
 **audio_codec** | **str** |  | [optional] 
 **video_codec** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | [**DlnaDlnaProfileType**](DlnaDlnaProfileType.md) |  | [optional] 
 **org_pn** | **str** |  | [optional] 
 **mime_type** | **str** |  | [optional] 
 **conditions** | [**list[DlnaProfileCondition]**](DlnaProfileCondition.md) |  | [optional] 

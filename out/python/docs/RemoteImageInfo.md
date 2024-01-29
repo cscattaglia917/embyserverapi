@@ -11,8 +11,9 @@ Name | Type | Description | Notes
 **community_rating** | **float** |  | [optional] 
 **vote_count** | **int** |  | [optional] 
 **language** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
-**rating_type** | **str** |  | [optional] 
+**display_language** | **str** |  | [optional] 
+**type** | [**ImageType**](ImageType.md) |  | [optional] 
+**rating_type** | [**RatingType**](RatingType.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

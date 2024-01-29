@@ -1,6 +1,6 @@
 # embyapi.LibraryServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**get_items_by_id_themesongs**](LibraryServiceApi.md#get_items_by_id_themesongs) | **GET** /Items/{Id}/ThemeSongs | Gets theme songs for an item
 [**get_items_by_id_themevideos**](LibraryServiceApi.md#get_items_by_id_themevideos) | **GET** /Items/{Id}/ThemeVideos | Gets theme videos for an item
 [**get_items_counts**](LibraryServiceApi.md#get_items_counts) | **GET** /Items/Counts | 
+[**get_items_intros**](LibraryServiceApi.md#get_items_intros) | **GET** /Items/Intros | Gets info to debug intros
 [**get_libraries_availableoptions**](LibraryServiceApi.md#get_libraries_availableoptions) | **GET** /Libraries/AvailableOptions | 
 [**get_library_mediafolders**](LibraryServiceApi.md#get_library_mediafolders) | **GET** /Library/MediaFolders | Gets all user media folders.
 [**get_library_physicalpaths**](LibraryServiceApi.md#get_library_physicalpaths) | **GET** /Library/PhysicalPaths | Gets a list of physical paths from virtual folders
@@ -26,6 +27,8 @@ Method | HTTP request | Description
 [**get_movies_by_id_similar**](LibraryServiceApi.md#get_movies_by_id_similar) | **GET** /Movies/{Id}/Similar | Finds movies and trailers similar to a given movie.
 [**get_shows_by_id_similar**](LibraryServiceApi.md#get_shows_by_id_similar) | **GET** /Shows/{Id}/Similar | Finds tv shows similar to a given one.
 [**get_trailers_by_id_similar**](LibraryServiceApi.md#get_trailers_by_id_similar) | **GET** /Trailers/{Id}/Similar | Finds movies and trailers similar to a given trailer.
+[**post_items_by_id_delete**](LibraryServiceApi.md#post_items_by_id_delete) | **POST** /Items/{Id}/Delete | Deletes an item from the library and file system
+[**post_items_delete**](LibraryServiceApi.md#post_items_delete) | **POST** /Items/Delete | Deletes an item from the library and file system
 [**post_library_media_updated**](LibraryServiceApi.md#post_library_media_updated) | **POST** /Library/Media/Updated | Reports that new movies have been added by an external source
 [**post_library_movies_added**](LibraryServiceApi.md#post_library_movies_added) | **POST** /Library/Movies/Added | Deprecated. Use /Library/Media/Updated
 [**post_library_movies_updated**](LibraryServiceApi.md#post_library_movies_updated) | **POST** /Library/Movies/Updated | Deprecated. Use /Library/Media/Updated
@@ -922,6 +925,56 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_items_intros**
+> list[PersistenceIntroDebugInfo] get_items_intros()
+
+Gets info to debug intros
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.LibraryServiceApi(embyapi.ApiClient(configuration))
+
+try:
+    # Gets info to debug intros
+    api_response = api_instance.get_items_intros()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LibraryServiceApi->get_items_intros: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[PersistenceIntroDebugInfo]**](PersistenceIntroDebugInfo.md)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_libraries_availableoptions**
 > LibraryLibraryOptionsResult get_libraries_availableoptions()
 
@@ -1332,6 +1385,112 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_items_by_id_delete**
+> post_items_by_id_delete(id)
+
+Deletes an item from the library and file system
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.LibraryServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | Item Id
+
+try:
+    # Deletes an item from the library and file system
+    api_instance.post_items_by_id_delete(id)
+except ApiException as e:
+    print("Exception when calling LibraryServiceApi->post_items_by_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Item Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_items_delete**
+> post_items_delete(ids)
+
+Deletes an item from the library and file system
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.LibraryServiceApi(embyapi.ApiClient(configuration))
+ids = 'ids_example' # str | Ids
+
+try:
+    # Deletes an item from the library and file system
+    api_instance.post_items_delete(ids)
+except ApiException as e:
+    print("Exception when calling LibraryServiceApi->post_items_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **str**| Ids | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

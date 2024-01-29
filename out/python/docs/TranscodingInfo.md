@@ -5,10 +5,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audio_codec** | **str** |  | [optional] 
 **video_codec** | **str** |  | [optional] 
+**sub_protocol** | **str** |  | [optional] 
 **container** | **str** |  | [optional] 
 **is_video_direct** | **bool** |  | [optional] 
 **is_audio_direct** | **bool** |  | [optional] 
 **bitrate** | **int** |  | [optional] 
+**audio_bitrate** | **int** |  | [optional] 
+**video_bitrate** | **int** |  | [optional] 
 **framerate** | **float** |  | [optional] 
 **completion_percentage** | **float** |  | [optional] 
 **transcoding_position_ticks** | **float** |  | [optional] 
@@ -16,7 +19,7 @@ Name | Type | Description | Notes
 **width** | **int** |  | [optional] 
 **height** | **int** |  | [optional] 
 **audio_channels** | **int** |  | [optional] 
-**transcode_reasons** | **list[str]** |  | [optional] 
+**transcode_reasons** | [**list[TranscodeReason]**](TranscodeReason.md) |  | [optional] 
 **current_cpu_usage** | **float** |  | [optional] 
 **average_cpu_usage** | **float** |  | [optional] 
 **cpu_history** | [**list[TupleDoubleDouble]**](TupleDoubleDouble.md) |  | [optional] 
@@ -29,6 +32,8 @@ Name | Type | Description | Notes
 **video_encoder_is_hardware** | **bool** |  | [optional] 
 **video_encoder_media_type** | **str** |  | [optional] 
 **video_encoder_hw_accel** | **str** |  | [optional] 
+**video_pipeline_info** | [**list[TranscodingVpStepInfo]**](TranscodingVpStepInfo.md) |  | [optional] 
+**subtitle_pipeline_infos** | **list[list[TranscodingVpStepInfo]]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

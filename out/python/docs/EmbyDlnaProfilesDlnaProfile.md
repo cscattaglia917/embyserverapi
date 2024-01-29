@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | [optional] 
+**type** | [**EmbyDlnaProfilesDeviceProfileType**](EmbyDlnaProfilesDeviceProfileType.md) |  | [optional] 
 **path** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **album_art_pn** | **str** |  | [optional] 

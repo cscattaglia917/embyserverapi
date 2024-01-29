@@ -1,6 +1,6 @@
 # embyapi.ReportsServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.scattaglia.com/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Gets activities entries
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -24,8 +24,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.ReportsServiceApi()
+api_instance = embyapi.ReportsServiceApi(embyapi.ApiClient(configuration))
 report_view = 'report_view_example' # str | The report view. Values (ReportData, ReportActivities)
 display_type = 'display_type_example' # str | The report display type. Values (None, Screen, Export, ScreenExport)
 has_query_limit = true # bool | Optional. If specified, results will include all records. (optional)
@@ -62,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -76,7 +82,7 @@ No authorization required
 
 Gets reports headers based on library items
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -86,8 +92,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.ReportsServiceApi()
+api_instance = embyapi.ReportsServiceApi(embyapi.ApiClient(configuration))
 report_view = 'report_view_example' # str | The report view. Values (ReportData, ReportActivities)
 display_type = 'display_type_example' # str | The report display type. Values (None, Screen, Export, ScreenExport)
 include_item_types = 'include_item_types_example' # str | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
@@ -116,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -130,7 +142,7 @@ No authorization required
 
 Gets reports based on library items
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -140,8 +152,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.ReportsServiceApi()
+api_instance = embyapi.ReportsServiceApi(embyapi.ApiClient(configuration))
 report_view = 'report_view_example' # str | The report view. Values (ReportData, ReportActivities)
 display_type = 'display_type_example' # str | The report display type. Values (None, Screen, Export, ScreenExport)
 max_official_rating = 'max_official_rating_example' # str | Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
@@ -328,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 
@@ -342,7 +360,7 @@ No authorization required
 
 Downloads report
 
-No authentication required
+Requires authentication as administrator
 
 ### Example
 ```python
@@ -352,8 +370,14 @@ import embyapi
 from embyapi.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = embyapi.ReportsServiceApi()
+api_instance = embyapi.ReportsServiceApi(embyapi.ApiClient(configuration))
 report_view = 'report_view_example' # str | The report view. Values (ReportData, ReportActivities)
 display_type = 'display_type_example' # str | The report display type. Values (None, Screen, Export, ScreenExport)
 max_official_rating = 'max_official_rating_example' # str | Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
@@ -539,7 +563,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
 
 ### HTTP request headers
 

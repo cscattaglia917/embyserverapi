@@ -11,11 +11,10 @@ Name | Type | Description | Notes
 **primary_image_height** | **int** |  | [optional] 
 **primary_image_width** | **int** |  | [optional] 
 **custom_prefs** | **dict(str, str)** |  | [optional] 
-**scroll_direction** | **str** |  | [optional] 
+**scroll_direction** | [**ScrollDirection**](ScrollDirection.md) |  | [optional] 
 **show_backdrop** | **bool** |  | [optional] 
 **remember_sorting** | **bool** |  | [optional] 
-**sort_order** | **str** |  | [optional] 
-**show_sidebar** | **bool** |  | [optional] 
+**sort_order** | [**SortOrder**](SortOrder.md) |  | [optional] 
 **client** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**provider_ids** | **dict(str, str)** |  | [optional] 
+**provider_ids** | [**ProviderIdDictionary**](ProviderIdDictionary.md) |  | [optional] 
 **production_year** | **int** |  | [optional] 
 **index_number** | **int** |  | [optional] 
 **index_number_end** | **int** |  | [optional] 
@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **search_provider_name** | **str** |  | [optional] 
 **game_system** | **str** |  | [optional] 
 **overview** | **str** |  | [optional] 
+**disambiguation_comment** | **str** |  | [optional] 
 **album_artist** | [**RemoteSearchResult**](RemoteSearchResult.md) |  | [optional] 
 **artists** | [**list[RemoteSearchResult]**](RemoteSearchResult.md) |  | [optional] 
 

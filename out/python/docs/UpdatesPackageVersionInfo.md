@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **guid** | **str** |  | [optional] 
 **version_str** | **str** |  | [optional] 
-**classification** | **str** |  | [optional] 
+**classification** | [**UpdatesPackageVersionClass**](UpdatesPackageVersionClass.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **required_version_str** | **str** |  | [optional] 
 **source_url** | **str** |  | [optional] 

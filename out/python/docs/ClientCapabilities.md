@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **supports_media_control** | **bool** |  | [optional] 
 **push_token** | **str** |  | [optional] 
 **push_token_type** | **str** |  | [optional] 
-**supports_persistent_identifier** | **bool** |  | [optional] 
 **supports_sync** | **bool** |  | [optional] 
 **device_profile** | [**DlnaDeviceProfile**](DlnaDeviceProfile.md) |  | [optional] 
 **icon_url** | **str** |  | [optional] 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**state** | **str** |  | [optional] 
+**state** | [**TasksTaskState**](TasksTaskState.md) |  | [optional] 
 **current_progress_percentage** | **float** |  | [optional] 
 **id** | **str** |  | [optional] 
 **last_execution_result** | [**TasksTaskResult**](TasksTaskResult.md) |  | [optional] 

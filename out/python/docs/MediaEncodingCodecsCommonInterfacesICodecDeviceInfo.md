@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **vendor_id** | **int** |  | [optional] 
 **device_id** | **int** |  | [optional] 
 **device_identifier** | **str** |  | [optional] 
-**hardware_context_framework** | **str** |  | [optional] 
+**hardware_context_framework** | [**EmbyMediaModelEnumsSecondaryFrameworks**](EmbyMediaModelEnumsSecondaryFrameworks.md) |  | [optional] 
 **dev_path** | **str** |  | [optional] 
 **drm_node** | **str** |  | [optional] 
 **vendor_name** | **str** |  | [optional] 

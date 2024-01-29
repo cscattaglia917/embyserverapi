@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **start_time_utc** | **datetime** |  | [optional] 
 **end_time_utc** | **datetime** |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | [**TasksTaskCompletionStatus**](TasksTaskCompletionStatus.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **key** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

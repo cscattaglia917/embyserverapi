@@ -1,6 +1,6 @@
 # embyapi.PlaylistServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**post_playlists**](PlaylistServiceApi.md#post_playlists) | **POST** /Playlists | Creates a new playlist
 [**post_playlists_by_id_items**](PlaylistServiceApi.md#post_playlists_by_id_items) | **POST** /Playlists/{Id}/Items | Adds items to a playlist
 [**post_playlists_by_id_items_by_itemid_move_by_newindex**](PlaylistServiceApi.md#post_playlists_by_id_items_by_itemid_move_by_newindex) | **POST** /Playlists/{Id}/Items/{ItemId}/Move/{NewIndex} | Moves a playlist item
+[**post_playlists_by_id_items_delete**](PlaylistServiceApi.md#post_playlists_by_id_items_delete) | **POST** /Playlists/{Id}/Items/Delete | Removes items from a playlist
 
 # **delete_playlists_by_id_items**
 > delete_playlists_by_id_items(id, entry_ids)
@@ -291,6 +292,61 @@ Name | Type | Description  | Notes
  **item_id** | **int**| ItemId | 
  **id** | **str**|  | 
  **new_index** | **int**| NewIndex | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_playlists_by_id_items_delete**
+> post_playlists_by_id_items_delete(id, entry_ids)
+
+Removes items from a playlist
+
+Requires authentication as user
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.PlaylistServiceApi(embyapi.ApiClient(configuration))
+id = 'id_example' # str | 
+entry_ids = 'entry_ids_example' # str | 
+
+try:
+    # Removes items from a playlist
+    api_instance.post_playlists_by_id_items_delete(id, entry_ids)
+except ApiException as e:
+    print("Exception when calling PlaylistServiceApi->post_playlists_by_id_items_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **entry_ids** | **str**|  | 
 
 ### Return type
 

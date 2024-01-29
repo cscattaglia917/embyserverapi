@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 
 **path_info** | [**ConfigurationMediaPathInfo**](ConfigurationMediaPathInfo.md) |  | [optional] 
 **refresh_library** | **bool** |  | [optional] 

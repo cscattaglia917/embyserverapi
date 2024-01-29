@@ -1,16 +1,18 @@
 # embyapi.LibraryStructureServiceApi
 
-All URIs are relative to *https://home.ourflix.de:32865/emby*
+All URIs are relative to *http://emby.media/emby*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_library_virtualfolders**](LibraryStructureServiceApi.md#delete_library_virtualfolders) | **DELETE** /Library/VirtualFolders | 
 [**delete_library_virtualfolders_paths**](LibraryStructureServiceApi.md#delete_library_virtualfolders_paths) | **DELETE** /Library/VirtualFolders/Paths | 
-[**get_library_virtualfolders**](LibraryStructureServiceApi.md#get_library_virtualfolders) | **GET** /Library/VirtualFolders | 
+[**get_library_virtualfolders_query**](LibraryStructureServiceApi.md#get_library_virtualfolders_query) | **GET** /Library/VirtualFolders/Query | 
 [**post_library_virtualfolders**](LibraryStructureServiceApi.md#post_library_virtualfolders) | **POST** /Library/VirtualFolders | 
+[**post_library_virtualfolders_delete**](LibraryStructureServiceApi.md#post_library_virtualfolders_delete) | **POST** /Library/VirtualFolders/Delete | 
 [**post_library_virtualfolders_libraryoptions**](LibraryStructureServiceApi.md#post_library_virtualfolders_libraryoptions) | **POST** /Library/VirtualFolders/LibraryOptions | 
 [**post_library_virtualfolders_name**](LibraryStructureServiceApi.md#post_library_virtualfolders_name) | **POST** /Library/VirtualFolders/Name | 
 [**post_library_virtualfolders_paths**](LibraryStructureServiceApi.md#post_library_virtualfolders_paths) | **POST** /Library/VirtualFolders/Paths | 
+[**post_library_virtualfolders_paths_delete**](LibraryStructureServiceApi.md#post_library_virtualfolders_paths_delete) | **POST** /Library/VirtualFolders/Paths/Delete | 
 [**post_library_virtualfolders_paths_update**](LibraryStructureServiceApi.md#post_library_virtualfolders_paths_update) | **POST** /Library/VirtualFolders/Paths/Update | 
 
 # **delete_library_virtualfolders**
@@ -109,8 +111,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_library_virtualfolders**
-> list[VirtualFolderInfo] get_library_virtualfolders()
+# **get_library_virtualfolders_query**
+> QueryResultVirtualFolderInfo get_library_virtualfolders_query(start_index=start_index, limit=limit)
 
 
 
@@ -132,20 +134,26 @@ configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = embyapi.LibraryStructureServiceApi(embyapi.ApiClient(configuration))
+start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+limit = 56 # int | Optional. The maximum number of records to return (optional)
 
 try:
-    api_response = api_instance.get_library_virtualfolders()
+    api_response = api_instance.get_library_virtualfolders_query(start_index=start_index, limit=limit)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LibraryStructureServiceApi->get_library_virtualfolders: %s\n" % e)
+    print("Exception when calling LibraryStructureServiceApi->get_library_virtualfolders_query: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_index** | **int**| Optional. The record index to start at. All items with a lower index will be dropped from the results. | [optional] 
+ **limit** | **int**| Optional. The maximum number of records to return | [optional] 
 
 ### Return type
 
-[**list[VirtualFolderInfo]**](VirtualFolderInfo.md)
+[**QueryResultVirtualFolderInfo**](QueryResultVirtualFolderInfo.md)
 
 ### Authorization
 
@@ -194,6 +202,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**LibraryAddVirtualFolder**](LibraryAddVirtualFolder.md)| AddVirtualFolder | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_library_virtualfolders_delete**
+> post_library_virtualfolders_delete(body)
+
+
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.LibraryStructureServiceApi(embyapi.ApiClient(configuration))
+body = embyapi.LibraryRemoveVirtualFolder() # LibraryRemoveVirtualFolder | RemoveVirtualFolder
+
+try:
+    api_instance.post_library_virtualfolders_delete(body)
+except ApiException as e:
+    print("Exception when calling LibraryStructureServiceApi->post_library_virtualfolders_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**LibraryRemoveVirtualFolder**](LibraryRemoveVirtualFolder.md)| RemoveVirtualFolder | 
 
 ### Return type
 
@@ -350,6 +410,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**LibraryAddMediaPath**](LibraryAddMediaPath.md)| AddMediaPath | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikeyauth](../README.md#apikeyauth), [embyauth](../README.md#embyauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_library_virtualfolders_paths_delete**
+> post_library_virtualfolders_paths_delete(body)
+
+
+
+Requires authentication as administrator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import embyapi
+from embyapi.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikeyauth
+configuration = embyapi.Configuration()
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = embyapi.LibraryStructureServiceApi(embyapi.ApiClient(configuration))
+body = embyapi.LibraryRemoveMediaPath() # LibraryRemoveMediaPath | RemoveMediaPath
+
+try:
+    api_instance.post_library_virtualfolders_paths_delete(body)
+except ApiException as e:
+    print("Exception when calling LibraryStructureServiceApi->post_library_virtualfolders_paths_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**LibraryRemoveMediaPath**](LibraryRemoveMediaPath.md)| RemoveMediaPath | 
 
 ### Return type
 
